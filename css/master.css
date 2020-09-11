@@ -1,0 +1,19 @@
+body{
+    background-color: #ffffff;
+}
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+.post{
+    width: 30%;
+    height: 300px;
+    display: inline-block;
+    border: 1px solid black;
+    margin: 15px;
+    background-color: #f1f3f4;
+    border-radius: 3px;
+}
+.post:hover{
+    
+}
