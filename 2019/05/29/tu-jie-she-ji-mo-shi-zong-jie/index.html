@@ -1,34 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
+<html lang=en>
+<head>
+    <!-- so meta -->
     <meta charset="utf-8">
-
-    
-
-    <!-- 渲染优化 -->
-    <meta name="renderer" content="webkit">
-    <meta name="force-rendering" content="webkit">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="HandheldFriendly" content="True" >
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <!--icon-->
-
-    <link rel="shortcut icon" type='image/x-icon' href="/favicon.ico">
-
-
-    <!-- meta -->
-
-
-<title>《图解设计模式》总结 | Hexo</title>
-
-
-
-
-
-    <!-- OpenGraph -->
- 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="收获五月初定下的计划，每天学习一个设计模式。现在完美收官了。23种设计模式，很巧妙，我觉得对我以后的开发有着深远的影响。深刻学习了可复用，可替换等灵活 的思想。面向对象的编程模式就是易于维护，方便修改。这个思想已经深入脑海了。 总结###Iterator-迭代器模式：一个一个遍历:一个一个的从容器中取出元素,java有自带的Iterator###Adapter-适配器模式：加个“适配器”以便于复用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《图解设计模式》总结">
@@ -39,156 +16,137 @@
 <meta property="article:published_time" content="2019-05-29T05:08:28.000Z">
 <meta property="article:modified_time" content="2020-09-11T03:02:33.743Z">
 <meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary_large_image">
-
-
-    
-<link rel="stylesheet" href="/css/style/main.css">
- 
-
-
-
+<meta name="twitter:card" content="summary">
     
     
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
     
+    <!-- title -->
+    <title>《图解设计模式》总结</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
 
     
-
-     
-
-    <!-- custom head -->
-
+    <!-- rss -->
+    
+    
 <meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
-    <body>
-        <div id="app">
-            <header class="header">
-    <div class="header__left">
-        <a href="/" class="button">
-            <span class="logo__text">
-                Demo
-            </span>
-        </a>
-    </div>
-    <div class="header__right">
-        
-            <div class="navbar__menus">
-                
-                    <a href="/" class="navbar-menu button">
-                        首页
-                    </a>
-                
-                    <a href="/tags/" class="navbar-menu button">
-                        标签
-                    </a>
-                
-                    <a href="/archives/" class="navbar-menu button">
-                        归档
-                    </a>
-                
-                    <a href="/friends/" class="navbar-menu button">
-                        友链
-                    </a>
-                
-                    <a href="/page/" class="navbar-menu button">
-                        Page
-                    </a>
-                
-            </div>
-        
-        
-        
-
-        
-        
-
-        
-
-        
-            <a class="dropdown-icon button" id="btn-dropdown">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round">
-                    <path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path>
-                </svg>
-            </a>
-            <div class="dropdown-menus" id="dropdown-menus">
-                <a class="dropback-icon button" id="btn-dropback">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round">
-                        <path fill="currentColor" d="M11.469,10l7.08-7.08c0.406-0.406,0.406-1.064,0-1.469c-0.406-0.406-1.063-0.406-1.469,0L10,8.53l-7.081-7.08c-0.406-0.406-1.064-0.406-1.469,0c-0.406,0.406-0.406,1.063,0,1.469L8.531,10L1.45,17.081c-0.406,0.406-0.406,1.064,0,1.469c0.203,0.203,0.469,0.304,0.735,0.304c0.266,0,0.531-0.101,0.735-0.304L10,11.469l7.08,7.081c0.203,0.203,0.469,0.304,0.735,0.304c0.267,0,0.532-0.101,0.735-0.304c0.406-0.406,0.406-1.064,0-1.469L11.469,10z"></path>
-                    </svg>
-                </a>
-                
-                    <a href="/" class="dropdown-menu button">
-                        首页
-                    </a>
-                
-                    <a href="/tags/" class="dropdown-menu button">
-                        标签
-                    </a>
-                
-                    <a href="/archives/" class="dropdown-menu button">
-                        归档
-                    </a>
-                
-                    <a href="/friends/" class="dropdown-menu button">
-                        友链
-                    </a>
-                
-                    <a href="/page/" class="dropdown-menu button">
-                        Page
-                    </a>
-                
-            </div>
-            <script>
-                document.getElementById('btn-dropdown').addEventListener('click', () => {
-                    const dd = document.getElementById('dropdown-menus');
-                    requestAnimationFrame(() => {
-                        dd.style.display = 'flex';
-                        requestAnimationFrame(() => {
-                            dd.style.transform = 'translateY(0)';
-                            dd.style.opacity = '1';
-                        });
-                    });
-                });
-                document.getElementById('btn-dropback').addEventListener('click', () => {
-                    const dd = document.getElementById('dropdown-menus');
-                    dd.style.transform = 'translateY(2.25rem)';                    
-                    dd.style.opacity = '0';
-                    setTimeout(() => {dd.style.display = 'none';}, 350);
-                });
-            </script>
-        
-    </div>
-</header>
-
-
-            <main class="main">
+<body class="max-width mx-auto px3 ltr">
     
-<div class="post-title">
-    <h1 class="post-title__text">
-        《图解设计模式》总结
-    </h1>
-    <div class="post-title__meta">
-        <a href="/archives/2019/05/" class="post-meta__date button">
-    2019-05-29
-</a>
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
         
- 
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
         
-    
-    
+        <li><a class="icon" href="/2019/06/10/xin-jian-pan-plum-niz-atom66/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2019/05/21/lan-ren-xiang-mu-tang-zai-chuang-shang-kong-zhi-yin-le-bo-fang/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2019/05/29/tu-jie-she-ji-mo-shi-zong-jie/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2019/05/29/tu-jie-she-ji-mo-shi-zong-jie/&text=《图解设计模式》总结"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2019/05/29/tu-jie-she-ji-mo-shi-zong-jie/&title=《图解设计模式》总结"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2019/05/29/tu-jie-she-ji-mo-shi-zong-jie/&is_video=false&description=《图解设计模式》总结"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=《图解设计模式》总结&body=Check out this article: http://example.com/2019/05/29/tu-jie-she-ji-mo-shi-zong-jie/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2019/05/29/tu-jie-she-ji-mo-shi-zong-jie/&title=《图解设计模式》总结"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2019/05/29/tu-jie-she-ji-mo-shi-zong-jie/&title=《图解设计模式》总结"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2019/05/29/tu-jie-she-ji-mo-shi-zong-jie/&title=《图解设计模式》总结"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2019/05/29/tu-jie-she-ji-mo-shi-zong-jie/&title=《图解设计模式》总结"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2019/05/29/tu-jie-she-ji-mo-shi-zong-jie/&name=《图解设计模式》总结&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2019/05/29/tu-jie-she-ji-mo-shi-zong-jie/&t=《图解设计模式》总结"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
 
-
- 
-
- 
     </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%B6%E8%8E%B7"><span class="toc-number">1.</span> <span class="toc-text">收获</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">2.</span> <span class="toc-text">总结</span></a></li></ol>
+    </div>
+  </span>
 </div>
 
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        《图解设计模式》总结
+    </h1>
 
-    <article class="post content-card">
-        <div class="post__header"> </div>
-        <div class="post__content">
-            <h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><p>五月初定下的计划，每天学习一个设计模式。现在完美收官了。23种设计模式，很巧妙，我觉得对我以后的开发有着深远的影响。深刻学习了可复用，可替换等灵活 的思想。面向对象的编程模式就是易于维护，方便修改。这个思想已经深入脑海了。</p>
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Hexo</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-05-29T05:08:28.000Z" itemprop="datePublished">2019-05-29</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><p>五月初定下的计划，每天学习一个设计模式。现在完美收官了。23种设计模式，很巧妙，我觉得对我以后的开发有着深远的影响。深刻学习了可复用，可替换等灵活 的思想。面向对象的编程模式就是易于维护，方便修改。这个思想已经深入脑海了。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>###Iterator-迭代器模式：一个一个遍历:<br>一个一个的从容器中取出元素,java有自带的Iterator<br>###Adapter-适配器模式：加个“适配器”以便于复用<br>将两个没法直接关联在一起的东西，通过适配器联系再一起。220v的用电器不能直接插在380v的插口上，需要电源适配器。<br>###Template Method-模板模式：将具体交给子类<br>父类知道实现什么，子类知道怎么具体实现。用镂空的模具来进行绘画，可以使用粉笔画，可以使用铅笔画。<br>###Factory Method-工厂模式：将实例的生成交给子类<br>产品不是直接生成，而是由工厂类加工。工厂加工时可以进行给产品注册等 操作。<br>###Singleton-单例模式：只有一个实例<br>将构造函数私有化，静态的方式生成一个当前类，通过方法来获得唯一的一个实例。<br>###Prototype-原型模式：通过复制生成实例<br>实例不方便通过new出来的时候，就可以复制出来。java要进行clone操作要实现cloneable。clone克隆 分为深克隆和浅克隆，浅克隆顾名思义浅层的克隆，比如对象中有数组，只会克隆数组的引用，而不是真正的生成一个新的数组。深克隆就是会新建一个数组，对当前对象的数组操作不会影响原型对象数组。<br>###Builder-建造者模式：组装复杂的实例<br>将复杂的问题，分解成小问题，再将小问题进行组合。盖楼的时候，一层一层盖组成了大楼。<br>###Strategy-策略模式：整体替换算法<br>军队行军打仗，可以使用各种阵法。指挥者可以自由让军队变换阵法，而不是一个军队只会一个阵法。<br>###Composite-组合模式：容器与内容的一致性<br>文件夹里可以装文件，也可以装文件夹。文件和文件夹实现同一个接口，这样文件夹就可以自己添加自己了。<br>###Decorator-装饰模式：装饰边框与被装饰物的一致性<br>蛋糕加上奶油变成了奶油蛋糕，但还是蛋糕，奶油蛋糕加上了巧克力变成了巧克力奶油蛋糕，但还是蛋糕。可以无限被装饰。<br>###Visitor-访问者模式：访问数据结构并处理数据<br>对象接受访问，委托访问者调用访问方法，将数据结构和处理数据分离开。与Strategy相似，有时访问者所访问的数据结构会使用Composite模式。<br>###Chain of Resposibility-责任链模式：推卸责任<br>处理类接到请求时，自己先尝试做，如果做不了将会交个下一个处理类做，以此类推。我觉得和switch case相似。<br>###Facade-外观模式：简单窗口<br>面对一大堆复杂的借口，将这些复杂的借口整合在一起完成工作，程序员只需面对一个窗口进行编程。前人栽树后人乘凉的设计模式<br>###Mediator-仲裁者模式：只有一个仲裁者<br>小组成员只知道自己做什么事，不用知道什么时候做，统一交给组长来处理逻辑。组员之间不通信，只和组长通信。<br>###Observer-观察者模式：发送状态变化通知<br>说是观察者模式，更像是接受者模式。当对象发生改变通知给观察者，观察者作出处理。<br>###Memento-备忘录模式：保存对象状态<br>我更喜欢叫存档模式，就像玩游戏一样，在自己状态最好的时候，或者Boss门口的时候存档，打不过再读档。<br>###State-状态模式：用类表示状态<br>状态是个抽象类，什么具体状态做什么事。而不是判断当前是什么状态，而做什么动作。<br>###Flyweight-轻量模式：共享对象，避免浪费<br>生产实例之前，先检查下之前有没有生成过，如果有直接使用，没有再生成。减少系统资源的浪费。<br>###Proxy-代理模式：只在必要时生产实例<br>生产一个对象的代理对象，代理对象可以替该对象完成一些事情，如果这个事情代理对象完成不了，迫不得已生产该对象。<br>###Command-命令模式：命令也是类<br>将一些列时间按顺序插入到队列中，再依次执行。<br>###Interpreter-解释器模式：语法规则也是类<br>像是研发一门新的编程语言。没有深入学习。</p>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -209,69 +167,138 @@
             document.body.appendChild(img);
           });
       </script>
-        </div>
-         
-        <div class="post-footer__meta">
-    <p>
-        updated at 2020-09-11
-    </p>
-</div> 
-        <div class="post-meta__cats">
-    
-    
-</div> 
-    </article>
-    
+  </div>
+</article>
 
 
-</main>
 
-            <footer class="footer">
-    
-
-
-    
-     
- 
-
- 
-    
         
-        <p class="footer-copyright">
-            Copyright&nbsp;©&nbsp;2020&nbsp;<a href="/">Hexo</a>
-        </p>
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%B6%E8%8E%B7"><span class="toc-number">1.</span> <span class="toc-text">收获</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">2.</span> <span class="toc-text">总结</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2019/05/29/tu-jie-she-ji-mo-shi-zong-jie/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2019/05/29/tu-jie-she-ji-mo-shi-zong-jie/&text=《图解设计模式》总结"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2019/05/29/tu-jie-she-ji-mo-shi-zong-jie/&title=《图解设计模式》总结"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2019/05/29/tu-jie-she-ji-mo-shi-zong-jie/&is_video=false&description=《图解设计模式》总结"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=《图解设计模式》总结&body=Check out this article: http://example.com/2019/05/29/tu-jie-she-ji-mo-shi-zong-jie/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2019/05/29/tu-jie-she-ji-mo-shi-zong-jie/&title=《图解设计模式》总结"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2019/05/29/tu-jie-she-ji-mo-shi-zong-jie/&title=《图解设计模式》总结"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2019/05/29/tu-jie-she-ji-mo-shi-zong-jie/&title=《图解设计模式》总结"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2019/05/29/tu-jie-she-ji-mo-shi-zong-jie/&title=《图解设计模式》总结"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2019/05/29/tu-jie-she-ji-mo-shi-zong-jie/&name=《图解设计模式》总结&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2019/05/29/tu-jie-she-ji-mo-shi-zong-jie/&t=《图解设计模式》总结"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
     
     
-    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+    2016-2020
+    John Doe
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
 </footer>
 
-        </div>
-         
+    </div>
+    <!-- styles -->
 
- 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
- 
 
- 
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
 
   
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
 
 
+<script src="/js/main.js"></script>
 
- 
+<!-- search -->
 
+<!-- Google Analytics -->
 
-    
+<!-- Baidu Analytics -->
 
-
- 
-
-
-
+<!-- Disqus Comments -->
 
 
-
-
-
-    </body>
+</body>
 </html>
