@@ -21,7 +21,7 @@
     <!-- meta -->
 
 
-<title>Archive: 2020/9 | Hexo</title>
+<title>树莓派 SSD1306 OLED 显示树莓派温度及天气 | Hexo</title>
 
 
 
@@ -29,13 +29,19 @@
 
     <!-- OpenGraph -->
  
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2020/09/index.html">
+    <meta name="description" content="##硬件准备  树莓派  SSD1306驱动OLED屏幕  母对母杜邦线  面包板、公对公（可选）   ##开始操作  把 oled屏幕引脚 通过 杜邦线 插到 树莓派 对应的引脚，VCC引脚插入3.3v引脚，GND代表接地，SDA要插入SDA.1，SCL插入SCL.1 ####未试验可否热插拔 ssh连接树莓派（或其他方式） ###打开相应接口： sudo raspi-config Interf">
+<meta property="og:type" content="article">
+<meta property="og:title" content="树莓派 SSD1306 OLED 显示树莓派温度及天气">
+<meta property="og:url" content="http://example.com/2020/09/11/shu-mei-pai-ssd1306-oled-xian-shi-shu-mei-pai-wen-du-ji-tian-qi/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="##硬件准备  树莓派  SSD1306驱动OLED屏幕  母对母杜邦线  面包板、公对公（可选）   ##开始操作  把 oled屏幕引脚 通过 杜邦线 插到 树莓派 对应的引脚，VCC引脚插入3.3v引脚，GND代表接地，SDA要插入SDA.1，SCL插入SCL.1 ####未试验可否热插拔 ssh连接树莓派（或其他方式） ###打开相应接口： sudo raspi-config Interf">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://shumeipai.nxez.com/wp-content/uploads/2015/03/rpi-pins-40-0.png">
+<meta property="article:published_time" content="2020-09-11T03:05:18.313Z">
+<meta property="article:modified_time" content="2020-09-11T03:04:44.884Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://shumeipai.nxez.com/wp-content/uploads/2015/03/rpi-pins-40-0.png">
 
 
     
@@ -157,77 +163,149 @@
 </header>
 
 
-    <div class="cover">
-        <div class="cover__logo">
-            
-                <h1>Demo</h1>
-            
-        </div>
-        
-            <div class="cover__intro">
-                <p>Hi, nice to meet you!</p>
- 
-            </div>
-        
-    </div>
-
-            
-<main class='main'>
+            <main class="main">
     
-		
-    <div class="posts">
-        
-            
-                <div class='post-entry content-card'>
-                    <div class="post-entry__header"></div>
-<div class="post-entry__content">
-    <h2 class="post-entry__title">
-        按一下钮放一句屁：树莓派+音响+按钮+腾讯云TTS+一言
-    </h2>
-    
-</div>
-<div class="post-entry__meta">
-    <a href="/archives/2020/09/" class="post-meta__date button">
-    2020-09-11
-</a>
-    
- 
-</div>
-<div class="post-entry__tags">
-    
-</div> 
-<a href="/2020/09/11/an-yi-xia-niu-fang-yi-ju-pi-shu-mei-pai-yin-xiang-an-niu-teng-xun-yun-tts-yi-yan/" class="post-entry__link">Link</a>
-                </div>
-            
-                <div class='post-entry content-card'>
-                    <div class="post-entry__header"></div>
-<div class="post-entry__content">
-    <h2 class="post-entry__title">
+<div class="post-title">
+    <h1 class="post-title__text">
         树莓派 SSD1306 OLED 显示树莓派温度及天气
-    </h2>
-    
-</div>
-<div class="post-entry__meta">
-    <a href="/archives/2020/09/" class="post-meta__date button">
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2020/09/" class="post-meta__date button">
     2020-09-11
 </a>
-    
+        
  
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
 </div>
-<div class="post-entry__tags">
+
+
+    <article class="post content-card">
+        <div class="post__header"> </div>
+        <div class="post__content">
+            <p>##硬件准备</p>
+<ol>
+<li><p>树莓派</p>
+</li>
+<li><p>SSD1306驱动OLED屏幕</p>
+</li>
+<li><p>母对母杜邦线</p>
+</li>
+<li><p>面包板、公对公（可选）</p>
+</li>
+</ol>
+<p>##开始操作</p>
+<p><a target="_blank" rel="noopener" href="http://shumeipai.nxez.com/wp-content/uploads/2015/03/rpi-pins-40-0.png"><img src="http://shumeipai.nxez.com/wp-content/uploads/2015/03/rpi-pins-40-0.png"></a></p>
+<p>把 oled屏幕引脚 通过 杜邦线 插到 树莓派 对应的引脚，VCC引脚插入3.3v引脚，GND代表接地，SDA要插入SDA.1，SCL插入SCL.1</p>
+<p>####未试验可否热插拔</p>
+<p>ssh连接树莓派（或其他方式）</p>
+<p>###打开相应接口：</p>
+<p><code>sudo raspi-config</code></p>
+<p>Interfacing Options &gt; I2C    打开I2C</p>
+<p>Interfacing Options &gt; SPI    打开SPI</p>
+<p>###安装相关驱动<br><code>sudo apt-get update</code></p>
+<p><code>sudo apt-get install build-essential python-dev python-pip</code></p>
+<p><code>sudo pip3 install RPi.GPIO</code></p>
+<p><code>sudo apt-get install python-imaging python-smbus</code></p>
+<p><code>sudo pip3 install demjson</code></p>
+<p>###从Github上拷贝Adafruit_Python_SSD1306</p>
+<p><code>sudo apt-get install git</code></p>
+<p><code>git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git</code> 也可以下载其他语言</p>
+<p><code>cd Adafruit_Python_SSD1306</code></p>
+<p><code>sudo python3 setup.py install</code></p>
+<p>###编写程序</p>
+<pre><code>import time
+import Adafruit_GPIO.SPI as SPI
+import Adafruit_SSD1306
+import requests
+import demjson
+from PIL import Image
+from PIL import ImageDraw
+from PIL import ImageFont
+import threading
+import subprocess
+RST = None
+DC = 23
+SPI_PORT = 0
+SPI_DEVICE = 0
+disp = Adafruit_SSD1306.SSD1306_128_32(rst=RST)
+disp.begin()
+disp.clear()
+disp.display()
+width = disp.width
+height = disp.height
+image = Image.new('1', (width, height))
+draw = ImageDraw.Draw(image)
+print(str(width) +"," + str(height))
+draw.rectangle((0,0,width,height), outline=0, fill=0)
+padding = -3
+top = padding
+bottom = height-padding
+x = 0
+font = ImageFont.truetype('/home/pi/font/微软vista雅黑.ttf', 14)
+#fontTemp = ImageFont.truetype('/home/pi/font/kraash.woff.ttf', 8)
+
+def getWeather():
+    while True:
+        req = requests.get("http://wthrcdn.etouch.cn/weather_mini?city=%E5%8C%97%E4%BA%AC")
+        weatherJson = demjson.decode(req.text)
+        weather = weatherJson['data']['forecast'][0]
+        global high
+        high = weather['high'].replace('高温','').strip()
+        global low
+        low = weather['low'].replace('低温','').strip()
+        global type_
+        type_ = weather['type']
+        global fengli
+        fengli = weather['fengli'].replace('&lt;![CDATA[','').replace(']','').replace('&gt;','')
+        time.sleep(60*60)
+thead = threading.Thread(target = getWeather)
+thead.start()
+time.sleep(3)
+while True:
+    draw.rectangle((0,0,width,height), outline=0, fill=0)
+    with open ("/sys/class/thermal/thermal_zone0/temp</code></pre>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+        </div>
+         
+        <div class="post-footer__meta">
+    <p>
+        updated at 2020-09-11
+    </p>
+</div> 
+        <div class="post-meta__cats">
+    
     
 </div> 
-<a href="/2020/09/11/shu-mei-pai-ssd1306-oled-xian-shi-shu-mei-pai-wen-du-ji-tian-qi/" class="post-entry__link">Link</a>
-                </div>
-            
-        
-    </div>
-    
-        
+    </article>
     
 
 
-	
 </main>
 
             <footer class="footer">

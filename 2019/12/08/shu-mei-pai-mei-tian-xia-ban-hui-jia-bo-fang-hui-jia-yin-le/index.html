@@ -21,7 +21,7 @@
     <!-- meta -->
 
 
-<title>Hello World | Hexo</title>
+<title>树莓派 每天下班回家 播放《回家》音乐 | Hexo</title>
 
 
 
@@ -29,15 +29,15 @@
 
     <!-- OpenGraph -->
  
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="##准备    1. 树莓派    2. 音响    3. 树莓派与手机在一个局域网中 ##思路利用回家时手机会自动连接wifi实现 设置路由器 将自己手机的物理地址和ip绑定 我明天差不多19:00-19:30到家，编写程序19:00开始 半小时结束监听 ##开始 编写脚本: import os import sys import time  ip &#x3D; sys.argv[1]#第一个参数为文件名">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2020/09/10/hello-world/index.html">
+<meta property="og:title" content="树莓派 每天下班回家 播放《回家》音乐">
+<meta property="og:url" content="http://example.com/2019/12/08/shu-mei-pai-mei-tian-xia-ban-hui-jia-bo-fang-hui-jia-yin-le/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="##准备    1. 树莓派    2. 音响    3. 树莓派与手机在一个局域网中 ##思路利用回家时手机会自动连接wifi实现 设置路由器 将自己手机的物理地址和ip绑定 我明天差不多19:00-19:30到家，编写程序19:00开始 半小时结束监听 ##开始 编写脚本: import os import sys import time  ip &#x3D; sys.argv[1]#第一个参数为文件名">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-10T10:41:55.244Z">
-<meta property="article:modified_time" content="2020-09-10T10:41:55.244Z">
+<meta property="article:published_time" content="2019-12-08T06:52:19.000Z">
+<meta property="article:modified_time" content="2020-09-11T03:04:58.678Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -165,11 +165,11 @@
     
 <div class="post-title">
     <h1 class="post-title__text">
-        Hello World
+        树莓派 每天下班回家 播放《回家》音乐
     </h1>
     <div class="post-title__meta">
-        <a href="/archives/2020/09/" class="post-meta__date button">
-    2020-09-10
+        <a href="/archives/2019/12/" class="post-meta__date button">
+    2019-12-08
 </a>
         
  
@@ -188,25 +188,67 @@
     <article class="post content-card">
         <div class="post__header"> </div>
         <div class="post__content">
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+            <p>##准备<br>    1. 树莓派<br>    2. 音响<br>    3. 树莓派与手机在一个局域网中</p>
+<p>##思路<br>利用回家时手机会自动连接wifi实现</p>
+<p>设置路由器 将自己手机的物理地址和ip绑定</p>
+<p>我明天差不多19:00-19:30到家，编写程序19:00开始 半小时结束监听</p>
+<p>##开始</p>
+<p>编写脚本:</p>
+<pre><code>import os
+import sys
+import time
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+ip = sys.argv[1]#第一个参数为文件名 第二个参数为第一个参数
+start_time = (int)(time.time())
+while True:
+    result =os.system("ping -q -c 4 %s"%ip)#ping自己提前设置好ip -c 为次数,-q为只显示结果
+    if result == 0:
+        os.system("killall mplayer ")#关闭之前的播放操作，避免意外情况
+        os.system("mplayer /home/pi/play_music/gohome.mp3")#播放音乐，gohome为提前下载好的音乐
+        break
+    else:
+        now_time = ( (int)(time.time()) )
+        print(now_time - start_time)
+        if( now_time - start_time &gt; 1800 ):
+            break#监听半小时还没ping通，则退出程序
+        #print("error")</code></pre>
+<p>编写定时任务：</p>
+<p><code>crontab -e</code></p>
+<p>定时任务的规则为 时间 + 动作<br><code>* * * * * do</code> :分、时、日、月、周 执行的任务</p>
+<p>其中时间可以用如下格式表示</p>
+<ul>
+<li>* 取值范围内的所有数字</li>
+<li>/ 每过多少个数字</li>
+<li>- 从X到Z</li>
+<li>，散列数字</li>
+</ul>
+<p>按照我的需求编写如下：<br><code>00 19 * * 1-5 python3 /home/pi/play_music/play_music_after_work.py 192.168.199.211</code></p>
+<p>每周一到周五19:00执行 <code>python3 /home/pi/play_music/play_music_after_work.py 192.168.199.211</code></p>
+<p><em>很是舒服了，每次回家都有高中放学的音乐</em></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
         </div>
          
         <div class="post-footer__meta">
     <p>
-        updated at 2020-09-10
+        updated at 2020-09-11
     </p>
 </div> 
         <div class="post-meta__cats">

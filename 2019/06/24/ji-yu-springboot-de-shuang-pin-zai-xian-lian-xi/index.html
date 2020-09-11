@@ -21,7 +21,7 @@
     <!-- meta -->
 
 
-<title>Archive: 2020/9 | Hexo</title>
+<title>基于springboot的双拼在线练习 | Hexo</title>
 
 
 
@@ -29,11 +29,15 @@
 
     <!-- OpenGraph -->
  
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2020/09/index.html">
+    <meta name="description" content="##起因前一阵买了个键盘吗，进了售后群，看见再说双拼，于是便了解了下双拼。 ##什么是双拼双拼输入法，将汉字拼音的声、韵母各用一个英文字母表示，也就是说打一个汉字，只要按2下键盘就可以了。目前主流的双拼方案包括小鹤双拼、微软拼音2003、智能ABC、拼音加加、紫光双拼、自然码等方案。这些方案的主要区别在于韵母的键位安排和辅助码。 ##需求对双拼非常感兴趣，于是便有了写一个用于练习的网站来提升自己的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于springboot的双拼在线练习">
+<meta property="og:url" content="http://example.com/2019/06/24/ji-yu-springboot-de-shuang-pin-zai-xian-lian-xi/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="##起因前一阵买了个键盘吗，进了售后群，看见再说双拼，于是便了解了下双拼。 ##什么是双拼双拼输入法，将汉字拼音的声、韵母各用一个英文字母表示，也就是说打一个汉字，只要按2下键盘就可以了。目前主流的双拼方案包括小鹤双拼、微软拼音2003、智能ABC、拼音加加、紫光双拼、自然码等方案。这些方案的主要区别在于韵母的键位安排和辅助码。 ##需求对双拼非常感兴趣，于是便有了写一个用于练习的网站来提升自己的">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-06-24T09:15:14.000Z">
+<meta property="article:modified_time" content="2020-09-11T03:02:52.010Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -157,77 +161,76 @@
 </header>
 
 
-    <div class="cover">
-        <div class="cover__logo">
-            
-                <h1>Demo</h1>
-            
+            <main class="main">
+    
+<div class="post-title">
+    <h1 class="post-title__text">
+        基于springboot的双拼在线练习
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2019/06/" class="post-meta__date button">
+    2019-06-24
+</a>
+        
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <article class="post content-card">
+        <div class="post__header"> </div>
+        <div class="post__content">
+            <p>##起因<br>前一阵买了个键盘吗，进了售后群，看见再说双拼，于是便了解了下双拼。</p>
+<p>##什么是双拼<br>双拼输入法，将汉字拼音的声、韵母各用一个英文字母表示，也就是说打一个汉字，只要按2下键盘就可以了。目前主流的双拼方案包括小鹤双拼、微软拼音2003、智能ABC、拼音加加、紫光双拼、自然码等方案。这些方案的主要区别在于韵母的键位安排和辅助码。</p>
+<p>##需求<br>对双拼非常感兴趣，于是便有了写一个用于练习的网站来提升自己的打字速度。</p>
+<p>##技术<br>spingboot+mybatis+mysql+html+jquery+thymeleaf</p>
+<p>##关键实现<br>用pinyin4j将汉字转换为拼音，将键盘输入的两个字母转为对应的声母韵母组合成的拼音，进行比较。</p>
+<p>##细节<br>前端输入两个字符时，发出请求，后端响应将字符拆解为声母韵母与对应汉字进行比较。正确则输入下一字符，错误则进入错字库，错的次数越多，权重越大。</p>
+<p>##项目地址</p>
+<p><a target="_blank" rel="noopener" href="http://doublespell.myth9.cn/" title="http://doublespell.myth9.cn">http://doublespell.myth9.cn</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/myth984/double_spell" title="Github">Github</a></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
         </div>
-        
-            <div class="cover__intro">
-                <p>Hi, nice to meet you!</p>
- 
-            </div>
-        
-    </div>
-
-            
-<main class='main'>
+         
+        <div class="post-footer__meta">
+    <p>
+        updated at 2020-09-11
+    </p>
+</div> 
+        <div class="post-meta__cats">
     
-		
-    <div class="posts">
-        
-            
-                <div class='post-entry content-card'>
-                    <div class="post-entry__header"></div>
-<div class="post-entry__content">
-    <h2 class="post-entry__title">
-        按一下钮放一句屁：树莓派+音响+按钮+腾讯云TTS+一言
-    </h2>
-    
-</div>
-<div class="post-entry__meta">
-    <a href="/archives/2020/09/" class="post-meta__date button">
-    2020-09-11
-</a>
-    
- 
-</div>
-<div class="post-entry__tags">
     
 </div> 
-<a href="/2020/09/11/an-yi-xia-niu-fang-yi-ju-pi-shu-mei-pai-yin-xiang-an-niu-teng-xun-yun-tts-yi-yan/" class="post-entry__link">Link</a>
-                </div>
-            
-                <div class='post-entry content-card'>
-                    <div class="post-entry__header"></div>
-<div class="post-entry__content">
-    <h2 class="post-entry__title">
-        树莓派 SSD1306 OLED 显示树莓派温度及天气
-    </h2>
-    
-</div>
-<div class="post-entry__meta">
-    <a href="/archives/2020/09/" class="post-meta__date button">
-    2020-09-11
-</a>
-    
- 
-</div>
-<div class="post-entry__tags">
-    
-</div> 
-<a href="/2020/09/11/shu-mei-pai-ssd1306-oled-xian-shi-shu-mei-pai-wen-du-ji-tian-qi/" class="post-entry__link">Link</a>
-                </div>
-            
-        
-    </div>
-    
-        
+    </article>
     
 
 
-	
 </main>
 
             <footer class="footer">

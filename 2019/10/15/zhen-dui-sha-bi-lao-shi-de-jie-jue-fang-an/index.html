@@ -21,7 +21,7 @@
     <!-- meta -->
 
 
-<title>test-blog | Hexo</title>
+<title>针对傻逼老师的解决方案 | Hexo</title>
 
 
 
@@ -29,15 +29,15 @@
 
     <!-- OpenGraph -->
  
-    <meta name="description" content="哈哈哈测试测试哈哈哈测试测试哈哈哈测试测试">
+    <meta name="description" content="##脏话我们的傻逼教授留了傻逼作业 傻逼的原因是因为让我做一个可以微信登录的网页 他妈的，注册微信开放平台需要企业资格，我们问他怎么办， 他说：问自己公司借 我：？？？？？？？？？ 我可cnm吧 ##技术 本想注册qq互联 用qq登录替代微信登录，结果qq登录审核一直有问题 苦思冥想好几天毫无进展 今天突然灵光乍现，我有一个微信公众号，可不可以用微信公众号的生成带二维码实现这个功能 我把整体流程考">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test-blog">
-<meta property="og:url" content="http://example.com/2020/09/10/test-blog/index.html">
+<meta property="og:title" content="针对傻逼老师的解决方案">
+<meta property="og:url" content="http://example.com/2019/10/15/zhen-dui-sha-bi-lao-shi-de-jie-jue-fang-an/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="哈哈哈测试测试哈哈哈测试测试哈哈哈测试测试">
+<meta property="og:description" content="##脏话我们的傻逼教授留了傻逼作业 傻逼的原因是因为让我做一个可以微信登录的网页 他妈的，注册微信开放平台需要企业资格，我们问他怎么办， 他说：问自己公司借 我：？？？？？？？？？ 我可cnm吧 ##技术 本想注册qq互联 用qq登录替代微信登录，结果qq登录审核一直有问题 苦思冥想好几天毫无进展 今天突然灵光乍现，我有一个微信公众号，可不可以用微信公众号的生成带二维码实现这个功能 我把整体流程考">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-10T10:53:48.000Z">
-<meta property="article:modified_time" content="2020-09-10T10:58:38.164Z">
+<meta property="article:published_time" content="2019-10-15T07:12:07.000Z">
+<meta property="article:modified_time" content="2020-09-11T03:04:17.836Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -165,11 +165,11 @@
     
 <div class="post-title">
     <h1 class="post-title__text">
-        test-blog
+        针对傻逼老师的解决方案
     </h1>
     <div class="post-title__meta">
-        <a href="/archives/2020/09/" class="post-meta__date button">
-    2020-09-10
+        <a href="/archives/2019/10/" class="post-meta__date button">
+    2019-10-15
 </a>
         
  
@@ -188,12 +188,66 @@
     <article class="post content-card">
         <div class="post__header"> </div>
         <div class="post__content">
-            <h2 id="哈哈哈"><a href="#哈哈哈" class="headerlink" title="哈哈哈"></a>哈哈哈</h2><h4 id="测试测试"><a href="#测试测试" class="headerlink" title="测试测试"></a>测试测试</h4><h2 id="哈哈哈-1"><a href="#哈哈哈-1" class="headerlink" title="哈哈哈"></a>哈哈哈</h2><h4 id="测试测试-1"><a href="#测试测试-1" class="headerlink" title="测试测试"></a>测试测试</h4><h2 id="哈哈哈-2"><a href="#哈哈哈-2" class="headerlink" title="哈哈哈"></a>哈哈哈</h2><h4 id="测试测试-2"><a href="#测试测试-2" class="headerlink" title="测试测试"></a>测试测试</h4>
+            <p>##脏话<br>我们的傻逼教授留了傻逼作业</p>
+<p>傻逼的原因是因为让我做一个可以微信登录的网页</p>
+<p>他妈的，注册微信开放平台需要企业资格，我们问他怎么办，</p>
+<p>他说：问自己公司借</p>
+<p>我：？？？？？？？？？</p>
+<p>我可cnm吧</p>
+<p>##技术</p>
+<p>本想注册qq互联 用qq登录替代微信登录，结果qq登录审核一直有问题</p>
+<p>苦思冥想好几天毫无进展</p>
+<p>今天突然灵光乍现，我有一个微信公众号，可不可以用微信公众号的生成带二维码实现这个功能</p>
+<p>我把整体流程考虑清楚后，刚准备做 他妈的！个人订阅号没有生成带参数的二维码的权限</p>
+<p>满脑子cnm</p>
+<p>于是转变思路：</p>
+<ol>
+<li><p>用户打开网页</p>
+</li>
+<li><p>网页显示随机验证码</p>
+</li>
+<li><p>微信扫码关注公众号</p>
+</li>
+<li><p>用户发送验证码给公众号</p>
+</li>
+<li><p>公众号收到验证码向后台服务器发出参数为验证码的请求</p>
+</li>
+<li><p>后台服务器验证该二维码 和 随机生成的二维码 是否相同</p>
+</li>
+<li><p>用户浏览器不断ajax访问</p>
+</li>
+<li><p>直到后台服务器验证码对比成功</p>
+</li>
+<li><p>跳入主页</p>
+</li>
+</ol>
+<p>可是他妈的  我没有根据openId获取用户信息的权限</p>
+<p>操 openId有实效性不能做为用户标识</p>
+<p>自杀</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
         </div>
          
         <div class="post-footer__meta">
     <p>
-        updated at 2020-09-10
+        updated at 2020-09-11
     </p>
 </div> 
         <div class="post-meta__cats">
