@@ -10,6 +10,12 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+a {
+    outline-style: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 header {
     height: 100px;
     background-color: #1b1b1b;
@@ -35,6 +41,14 @@ header {
     min-width: 991px;
     max-width: 1323px;
     width: 96%;
+}
+
+#headerMainMenu>li>a:hover {
+    text-decoration: none;
+    background: #191919;
+    border-top: 1px solid #252525;
+    border-left: 1px solid #252525;
+    border-right: 1px solid #252525;
 }
 
 .logo {}
@@ -301,11 +315,6 @@ ul.videos li .wrap .img {
     background: #000;
 }
 
-a {
-    outline-style: none;
-    text-decoration: none;
-}
-
 ul.videos li .wrap .img {
     width: 99%;
     height: auto;
@@ -420,4 +429,39 @@ ul.videos li .wrap .rating-container .value {
         margin-right: 10px;
         margin-top: 3px;
     }
+}
+
+footer {
+    height: 60px;
+    width: 100%;
+    background-color: #151515;
+    bottom: 0;
+}
+
+.footer-wrapper {
+    min-width: 950px;
+    max-width: 1325px;
+    height: 100%;
+    width: 96%;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+}
+
+.copyright {
+    float: right;
+    color: #666;
+    font-size: 12px;
+    margin-top: 30px;
+}
+
+.socialLink {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.socialLink>* {
+    padding-right: 20px;
+    color: #999999;
+    font-size: 12px;
 }
