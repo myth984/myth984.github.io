@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <title>Document</title>
+    <title>基于springboot的双拼在线练习</title>
     <link rel="stylesheet" href="/css/master.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
 <meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -62,19 +62,19 @@
 
     </div>
 </header>
+<div class="post-container">
 
     基于springboot的双拼在线练习
 
-        2019-06-24
+    2019-06-24
 
-            <p>##起因<br>前一阵买了个键盘吗，进了售后群，看见再说双拼，于是便了解了下双拼。</p>
-<p>##什么是双拼<br>双拼输入法，将汉字拼音的声、韵母各用一个英文字母表示，也就是说打一个汉字，只要按2下键盘就可以了。目前主流的双拼方案包括小鹤双拼、微软拼音2003、智能ABC、拼音加加、紫光双拼、自然码等方案。这些方案的主要区别在于韵母的键位安排和辅助码。</p>
-<p>##需求<br>对双拼非常感兴趣，于是便有了写一个用于练习的网站来提升自己的打字速度。</p>
-<p>##技术<br>spingboot+mybatis+mysql+html+jquery+thymeleaf</p>
-<p>##关键实现<br>用pinyin4j将汉字转换为拼音，将键盘输入的两个字母转为对应的声母韵母组合成的拼音，进行比较。</p>
-<p>##细节<br>前端输入两个字符时，发出请求，后端响应将字符拆解为声母韵母与对应汉字进行比较。正确则输入下一字符，错误则进入错字库，错的次数越多，权重越大。</p>
-<p>##项目地址</p>
-<p><a target="_blank" rel="noopener" href="http://doublespell.myth9.cn/" title="http://doublespell.myth9.cn">http://doublespell.myth9.cn</a></p>
+    <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>前一阵买了个键盘吗，进了售后群，看见再说双拼，于是便了解了下双拼。</p>
+<h2 id="什么是双拼"><a href="#什么是双拼" class="headerlink" title="什么是双拼"></a>什么是双拼</h2><p>双拼输入法，将汉字拼音的声、韵母各用一个英文字母表示，也就是说打一个汉字，只要按2下键盘就可以了。目前主流的双拼方案包括小鹤双拼、微软拼音2003、智能ABC、拼音加加、紫光双拼、自然码等方案。这些方案的主要区别在于韵母的键位安排和辅助码。</p>
+<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>对双拼非常感兴趣，于是便有了写一个用于练习的网站来提升自己的打字速度。</p>
+<h2 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h2><p>spingboot+mybatis+mysql+html+jquery+thymeleaf</p>
+<h2 id="关键实现"><a href="#关键实现" class="headerlink" title="关键实现"></a>关键实现</h2><p>用pinyin4j将汉字转换为拼音，将键盘输入的两个字母转为对应的声母韵母组合成的拼音，进行比较。</p>
+<h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><p>前端输入两个字符时，发出请求，后端响应将字符拆解为声母韵母与对应汉字进行比较。正确则输入下一字符，错误则进入错字库，错的次数越多，权重越大。</p>
+<h2 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h2><p><a target="_blank" rel="noopener" href="http://doublespell.myth9.cn/" title="http://doublespell.myth9.cn">http://doublespell.myth9.cn</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/myth984/double_spell" title="Github">Github</a></p>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -95,8 +95,8 @@
             document.body.appendChild(img);
           });
       </script>
-
-                <footer>
+</div>
+<footer>
     <div class="footer-wrapper">
         <div class="socialLink">
             <i class="fa fa-github fa-2x" aria-hidden="true"></i>

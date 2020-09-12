@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <title>Document</title>
+    <title>树莓派 SSD1306 OLED 显示树莓派温度及天气</title>
     <link rel="stylesheet" href="/css/master.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
 <meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -62,13 +62,13 @@
 
     </div>
 </header>
+<div class="post-container">
 
     树莓派 SSD1306 OLED 显示树莓派温度及天气
 
-        2019-11-17
+    2019-11-17
 
-            <p>##硬件准备</p>
-<ol>
+    <h2 id="硬件准备"><a href="#硬件准备" class="headerlink" title="硬件准备"></a>硬件准备</h2><ol>
 <li><p>树莓派</p>
 </li>
 <li><p>SSD1306驱动OLED屏幕</p>
@@ -78,27 +78,22 @@
 <li><p>面包板、公对公（可选）</p>
 </li>
 </ol>
-<p>##开始操作</p>
-<p><a target="_blank" rel="noopener" href="http://shumeipai.nxez.com/wp-content/uploads/2015/03/rpi-pins-40-0.png"><img src="http://shumeipai.nxez.com/wp-content/uploads/2015/03/rpi-pins-40-0.png"></a></p>
+<h2 id="开始操作"><a href="#开始操作" class="headerlink" title="开始操作"></a>开始操作</h2><p><a target="_blank" rel="noopener" href="http://shumeipai.nxez.com/wp-content/uploads/2015/03/rpi-pins-40-0.png"><img src="http://shumeipai.nxez.com/wp-content/uploads/2015/03/rpi-pins-40-0.png"></a></p>
 <p>把 oled屏幕引脚 通过 杜邦线 插到 树莓派 对应的引脚，VCC引脚插入3.3v引脚，GND代表接地，SDA要插入SDA.1，SCL插入SCL.1</p>
-<p>####未试验可否热插拔</p>
-<p>ssh连接树莓派（或其他方式）</p>
-<p>###打开相应接口：</p>
-<p><code>sudo raspi-config</code></p>
+<h4 id="未试验可否热插拔"><a href="#未试验可否热插拔" class="headerlink" title="未试验可否热插拔"></a>未试验可否热插拔</h4><p>ssh连接树莓派（或其他方式）</p>
+<h3 id="打开相应接口："><a href="#打开相应接口：" class="headerlink" title="打开相应接口："></a>打开相应接口：</h3><p><code>sudo raspi-config</code></p>
 <p>Interfacing Options &gt; I2C    打开I2C</p>
 <p>Interfacing Options &gt; SPI    打开SPI</p>
-<p>###安装相关驱动<br><code>sudo apt-get update</code></p>
+<h3 id="安装相关驱动"><a href="#安装相关驱动" class="headerlink" title="安装相关驱动"></a>安装相关驱动</h3><p><code>sudo apt-get update</code></p>
 <p><code>sudo apt-get install build-essential python-dev python-pip</code></p>
 <p><code>sudo pip3 install RPi.GPIO</code></p>
 <p><code>sudo apt-get install python-imaging python-smbus</code></p>
 <p><code>sudo pip3 install demjson</code></p>
-<p>###从Github上拷贝Adafruit_Python_SSD1306</p>
-<p><code>sudo apt-get install git</code></p>
+<h3 id="从Github上拷贝Adafruit-Python-SSD1306"><a href="#从Github上拷贝Adafruit-Python-SSD1306" class="headerlink" title="从Github上拷贝Adafruit_Python_SSD1306"></a>从Github上拷贝Adafruit_Python_SSD1306</h3><p><code>sudo apt-get install git</code></p>
 <p><code>git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git</code> 也可以下载其他语言</p>
 <p><code>cd Adafruit_Python_SSD1306</code></p>
 <p><code>sudo python3 setup.py install</code></p>
-<p>###编写程序</p>
-<pre><code>import time
+<h3 id="编写程序"><a href="#编写程序" class="headerlink" title="编写程序"></a>编写程序</h3><pre><code>import time
 import Adafruit_GPIO.SPI as SPI
 import Adafruit_SSD1306
 import requests
@@ -168,8 +163,8 @@ while True:
             document.body.appendChild(img);
           });
       </script>
-
-                <footer>
+</div>
+<footer>
     <div class="footer-wrapper">
         <div class="socialLink">
             <i class="fa fa-github fa-2x" aria-hidden="true"></i>

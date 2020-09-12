@@ -465,3 +465,9 @@ footer {
     color: #999999;
     font-size: 12px;
 }
+
+.post-container{
+    min-width: 950px;
+    max-width: 1325px;
+    margin: 0 auto;
+}

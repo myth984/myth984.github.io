@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <title>Document</title>
+    <title>windows无线控制n个安卓手机</title>
     <link rel="stylesheet" href="/css/master.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
 <meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -62,22 +62,21 @@
 
     </div>
 </header>
+<div class="post-container">
 
     windows无线控制n个安卓手机
 
-        2019-09-09
+    2019-09-09
 
-            <p>#起因<br>公司有6台手机再跑微信公众号的数据，但是不是特别稳定，偶尔会出现一些需要人为干预才能解决的错误。</p>
-<p>#方案<br>##配置adb环境：</p>
-<pre><code>下载地址：https://developer.android.com/studio/releases/platform-tools.html
+    <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>公司有6台手机再跑微信公众号的数据，但是不是特别稳定，偶尔会出现一些需要人为干预才能解决的错误。</p>
+<h1 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h1><h2 id="配置adb环境："><a href="#配置adb环境：" class="headerlink" title="配置adb环境："></a>配置adb环境：</h2><pre><code>下载地址：https://developer.android.com/studio/releases/platform-tools.html
 
 解压至任意目录，复制改目录
 
 此电脑-右键-属性-高级系统设置-环境变量-系统变量-PATH-编辑-新建-粘贴刚刚复制的路径
 
 打开cmd 输入 adb version 出现版本信息即配置成功</code></pre>
-<p>##下载scrcpy:</p>
-<pre><code>下载地址：https://github.com/Genymobile/scrcpy
+<h2 id="下载scrcpy"><a href="#下载scrcpy" class="headerlink" title="下载scrcpy:"></a>下载scrcpy:</h2><pre><code>下载地址：https://github.com/Genymobile/scrcpy
 
 有线连接：
 
@@ -116,7 +115,7 @@
     scrcpy.exe -b 1m -s ip:端口(-b 为最大传输速度，-s为指定哪一台手机)
 
     重复第一步</code></pre>
-<p>#缺点<br>无线连接不稳定，网络不好的时候 会掉线</p>
+<h1 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h1><p>无线连接不稳定，网络不好的时候 会掉线</p>
 <p>配置tcpip端口连接为一次性 如果刚换ip需要重新配置</p>
 <p><img src="/img/44a1aa09-cc96-480d-a428-d5e194fb1aad218534e76aa265ea0d7131d0e128934.jpg"></p>
 <script>
@@ -138,8 +137,8 @@
             document.body.appendChild(img);
           });
       </script>
-
-                <footer>
+</div>
+<footer>
     <div class="footer-wrapper">
         <div class="socialLink">
             <i class="fa fa-github fa-2x" aria-hidden="true"></i>

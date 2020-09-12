@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <title>Document</title>
+    <title>树莓派 每天下班回家 播放《回家》音乐</title>
     <link rel="stylesheet" href="/css/master.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
 <meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -62,17 +62,19 @@
 
     </div>
 </header>
+<div class="post-container">
 
     树莓派 每天下班回家 播放《回家》音乐
 
-        2019-12-08
+    2019-12-08
 
-            <p>##准备<br>    1. 树莓派<br>    2. 音响<br>    3. 树莓派与手机在一个局域网中</p>
-<p>##思路<br>利用回家时手机会自动连接wifi实现</p>
+    <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><pre><code>1. 树莓派
+2. 音响
+3. 树莓派与手机在一个局域网中</code></pre>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>利用回家时手机会自动连接wifi实现</p>
 <p>设置路由器 将自己手机的物理地址和ip绑定</p>
 <p>我明天差不多19:00-19:30到家，编写程序19:00开始 半小时结束监听</p>
-<p>##开始</p>
-<p>编写脚本:</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>编写脚本:</p>
 <pre><code>import os
 import sys
 import time
@@ -123,8 +125,8 @@ while True:
             document.body.appendChild(img);
           });
       </script>
-
-                <footer>
+</div>
+<footer>
     <div class="footer-wrapper">
         <div class="socialLink">
             <i class="fa fa-github fa-2x" aria-hidden="true"></i>

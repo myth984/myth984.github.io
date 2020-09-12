@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <title>Document</title>
+    <title>树莓派LAMP搭建可道云等一些列配置</title>
     <link rel="stylesheet" href="/css/master.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
 <meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -62,38 +62,31 @@
 
     </div>
 </header>
+<div class="post-container">
 
     树莓派LAMP搭建可道云等一些列配置
 
-        2019-10-26
+    2019-10-26
 
-            <p>在已经烧录完系统的情况下，再进行以下操作</p>
-<p>##更换apt源</p>
-<p>进入<a target="_blank" rel="noopener" href="https://mirror.tuna.tsinghua.edu.cn/help/raspbian/" title="清华大学镜像站">清华大学镜像站</a> 根据系统版本选择对应的镜像源，一定要选对了 不然会有很多后续问题</p>
+    <p>在已经烧录完系统的情况下，再进行以下操作</p>
+<h2 id="更换apt源"><a href="#更换apt源" class="headerlink" title="更换apt源"></a>更换apt源</h2><p>进入<a target="_blank" rel="noopener" href="https://mirror.tuna.tsinghua.edu.cn/help/raspbian/" title="清华大学镜像站">清华大学镜像站</a> 根据系统版本选择对应的镜像源，一定要选对了 不然会有很多后续问题</p>
 <p><code>sudo vi /etc/apt/sources.list</code></p>
 <p><code>sudo apt-get update</code></p>
-<p>##安装apache</p>
-<p><code>sudo apt-get apache2</code></p>
+<h2 id="安装apache"><a href="#安装apache" class="headerlink" title="安装apache"></a>安装apache</h2><p><code>sudo apt-get apache2</code></p>
 <p>没有特殊要求的话 就不用改配置文件 对应的目录为 /var/www/html</p>
 <p>此时在浏览器中输入<a target="_blank" rel="noopener" href="http://ip/">http://ip</a> 如果可以访问到网页就是成功了</p>
-<p>##安装mysql</p>
-<p><code>sudo apt-get install maridb</code> 我也不清楚为什么Mysql 安装不了maridb和mysql一样用</p>
+<h2 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h2><p><code>sudo apt-get install maridb</code> 我也不清楚为什么Mysql 安装不了maridb和mysql一样用</p>
 <p>如果镜像源配置错 很可能安装不上</p>
 <p><code>sudo mysql</code></p>
 <p>进入mysql中则安装成功</p>
-<p>##安装php</p>
-<p>安装php网上有很多教程，我都尝试了一下，没有能用的，我逐渐摸索找到了能用的方法</p>
+<h2 id="安装php"><a href="#安装php" class="headerlink" title="安装php"></a>安装php</h2><p>安装php网上有很多教程，我都尝试了一下，没有能用的，我逐渐摸索找到了能用的方法</p>
 <p><code> sudo apt-get install  php7.1 php7.1-curl php7.1-mbstring php7.1-gd</code></p>
-<p>##下载可道云</p>
-<p><a target="_blank" rel="noopener" href="https://kodcloud.com/download/">可道云</a>选择版本</p>
+<h2 id="下载可道云"><a href="#下载可道云" class="headerlink" title="下载可道云"></a>下载可道云</h2><p><a target="_blank" rel="noopener" href="https://kodcloud.com/download/">可道云</a>选择版本</p>
 <p>复制下载链接</p>
 <p><code>wget 下载链接</code></p>
 <p><code>mv 下载到的地址 /var/www/html</code> 将可道云文件移动到改目录下</p>
-<p>##其他配置</p>
-<p>###登录欢迎信息：</p>
-<p><code>sudo vi /etc/rc.local</code></p>
-<p>###开启ftp:</p>
-<p><code>sudo apt-get install vsftpd</code></p>
+<h2 id="其他配置"><a href="#其他配置" class="headerlink" title="其他配置"></a>其他配置</h2><h3 id="登录欢迎信息："><a href="#登录欢迎信息：" class="headerlink" title="登录欢迎信息："></a>登录欢迎信息：</h3><p><code>sudo vi /etc/rc.local</code></p>
+<h3 id="开启ftp"><a href="#开启ftp" class="headerlink" title="开启ftp:"></a>开启ftp:</h3><p><code>sudo apt-get install vsftpd</code></p>
 <p>没特殊需求不用修改配置文件</p>
 <p>windows资源管理器中 <a href="ftp://ip/">ftp://ip</a>  就可以访问了</p>
 <script>
@@ -115,8 +108,8 @@
             document.body.appendChild(img);
           });
       </script>
-
-                <footer>
+</div>
+<footer>
     <div class="footer-wrapper">
         <div class="socialLink">
             <i class="fa fa-github fa-2x" aria-hidden="true"></i>

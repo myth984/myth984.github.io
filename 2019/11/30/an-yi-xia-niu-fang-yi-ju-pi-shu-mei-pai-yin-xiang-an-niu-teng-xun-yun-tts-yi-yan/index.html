@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <title>Document</title>
+    <title>按一下钮放一句屁：树莓派+音响+按钮+腾讯云TTS+一言</title>
     <link rel="stylesheet" href="/css/master.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
 <meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -62,13 +62,13 @@
 
     </div>
 </header>
+<div class="post-container">
 
     按一下钮放一句屁：树莓派+音响+按钮+腾讯云TTS+一言
 
-        2019-11-30
+    2019-11-30
 
-            <p>##整体流程</p>
-<ol>
+    <h2 id="整体流程"><a href="#整体流程" class="headerlink" title="整体流程"></a>整体流程</h2><ol>
 <li>脚本监听按钮点击</li>
 <li>调用一言api</li>
 <li>将一言api转为wav文件</li>
@@ -81,14 +81,11 @@
 <li><p>触发按钮</p>
 </li>
 </ol>
-<p>##开始</p>
-<p>###安装mplay</p>
-<p>mplay用于播放媒体文件</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="安装mplay"><a href="#安装mplay" class="headerlink" title="安装mplay"></a>安装mplay</h3><p>mplay用于播放媒体文件</p>
 <p><code>sudo apt-get install mplayer</code></p>
 <p>树莓派插入音响，注意从<code> sudo raspi-config</code>中配置一下音响，有线方式还是蓝牙方式，若是蓝牙方式，则先和牙音响匹配，在把输出端设置为蓝牙</p>
 <p><code>mplayer test.mp3</code> 随便找个文件测试，是否安装成功</p>
-<p>###腾讯云tts</p>
-<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/product/tts" title="腾讯云-语音合成">腾讯云-语音合成</a></p>
+<h3 id="腾讯云tts"><a href="#腾讯云tts" class="headerlink" title="腾讯云tts"></a>腾讯云tts</h3><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/product/tts" title="腾讯云-语音合成">腾讯云-语音合成</a></p>
 <p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/1073/37935" title="python_SDK">python_SDK</a>根据文档下载例子,配置AppID、SecretId 与 SecretKey</p>
 <p>编写下载好的.py文件</p>
 <p><code>vi tcloud_tts.py</code></p>
@@ -162,8 +159,8 @@ def task_process():
             document.body.appendChild(img);
           });
       </script>
-
-                <footer>
+</div>
+<footer>
     <div class="footer-wrapper">
         <div class="socialLink">
             <i class="fa fa-github fa-2x" aria-hidden="true"></i>

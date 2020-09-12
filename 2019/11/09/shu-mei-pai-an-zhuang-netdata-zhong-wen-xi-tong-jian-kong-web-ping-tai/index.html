@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <title>Document</title>
+    <title>树莓派安装netdata中文系统监控web平台</title>
     <link rel="stylesheet" href="/css/master.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
 <meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -62,22 +62,20 @@
 
     </div>
 </header>
+<div class="post-container">
 
     树莓派安装netdata中文系统监控web平台
 
-        2019-11-09
+    2019-11-09
 
-            <p>以下操作默认在完成php安装、apache安装、（内网穿透）之前</p>
-<p>##下载netdata</p>
-<p>中文版:<br><code>git clone https://github.com/firehol/netdata.git --depth=1</code></p>
-<p>##开始安装</p>
-<p><code>cd netdata</code></p>
+    <p>以下操作默认在完成php安装、apache安装、（内网穿透）之前</p>
+<h2 id="下载netdata"><a href="#下载netdata" class="headerlink" title="下载netdata"></a>下载netdata</h2><p>中文版:<br><code>git clone https://github.com/firehol/netdata.git --depth=1</code></p>
+<h2 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h2><p><code>cd netdata</code></p>
 <p><code>sudo ./netdata-installer.sh</code></p>
 <p>如果安装过程中提示需要安装uuid字样，请输入如下命令</p>
 <p><code>sudo apt-get install uuid-dev</code></p>
 <p>重新安装即可</p>
-<p>##启动</p>
-<p><code>sudo service netdata start</code></p>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p><code>sudo service netdata start</code></p>
 <p>浏览器输入ip:19999即可</p>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -98,8 +96,8 @@
             document.body.appendChild(img);
           });
       </script>
-
-                <footer>
+</div>
+<footer>
     <div class="footer-wrapper">
         <div class="socialLink">
             <i class="fa fa-github fa-2x" aria-hidden="true"></i>
