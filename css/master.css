@@ -436,6 +436,7 @@ footer {
     width: 100%;
     background-color: #151515;
     bottom: 0;
+    position: relative;
 }
 
 .footer-wrapper {
@@ -463,7 +464,7 @@ footer {
 .socialLink>* {
     padding-right: 20px;
     color: #999999;
-    font-size: 12px;
+    font-size: 20px;
 }
 
 .post-container{
@@ -477,26 +478,28 @@ footer {
     font-size: 40px;
 }
 
-a,a:link,a:visited,a:focus{
+.post-content a,a:link,a:visited,a:focus{
     text-decoration:none;color:#fff;
 }
 
-.headerlink{
+.post-content a[target="_blank"]{
     position:relative;
 }
-.headerlink::after{
+.post-content a[target="_blank"]::after{
     content:'';
     display:block;
-    /*开始时候下划线的宽度为0*/
     width:0;
     height:3px;
     position:absolute;
     left:0;
     bottom:-10px;
-    background:#000;
-    /*这里我们设定所有改变都有动画效果，可以自己指定样式才有动画效果*/
-    transition:all 0.3s ease-in-out;
+    background:#f90;
+    transition:all 1.0s ease-in-out;
 }
-.headerlink:hover::after{
+
+.post-content a[target="_blank"]:hover::after{
     width:100%;
+}
+.post-container{
+    min-height: calc(100vh - 160px);
 }
