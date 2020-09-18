@@ -485,6 +485,7 @@ footer {
 .post-content a[target="_blank"]{
     position:relative;
 }
+
 .post-content a[target="_blank"]::after{
     content:'';
     display:block;
@@ -492,7 +493,7 @@ footer {
     height:3px;
     position:absolute;
     left:0;
-    bottom:-10px;
+    bottom:-5px;
     background:#f90;
     transition:all 1.0s ease-in-out;
 }
@@ -500,6 +501,7 @@ footer {
 .post-content a[target="_blank"]:hover::after{
     width:100%;
 }
+
 .post-container{
     min-height: calc(100vh - 160px);
 }
