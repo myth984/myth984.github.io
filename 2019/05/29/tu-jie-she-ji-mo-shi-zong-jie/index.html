@@ -4,16 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    
+
     <title>
         
-            Myth.icu | 《图解设计模式》总结
-        
+                        Myth.icu |
+                        《图解设计模式》总结
+                            
     </title>
     <link rel="stylesheet" href="/css/master.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="shortcut icon" type="image/x-icon" href="/image/favicon.png">
-<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 <body>
     <header>
@@ -96,7 +98,7 @@
 <h3 id="Decorator-装饰模式：装饰边框与被装饰物的一致性"><a href="#Decorator-装饰模式：装饰边框与被装饰物的一致性" class="headerlink" title="Decorator-装饰模式：装饰边框与被装饰物的一致性"></a>Decorator-装饰模式：装饰边框与被装饰物的一致性</h3><p>蛋糕加上奶油变成了奶油蛋糕，但还是蛋糕，奶油蛋糕加上了巧克力变成了巧克力奶油蛋糕，但还是蛋糕。可以无限被装饰。</p>
 <h3 id="Visitor-访问者模式：访问数据结构并处理数据"><a href="#Visitor-访问者模式：访问数据结构并处理数据" class="headerlink" title="Visitor-访问者模式：访问数据结构并处理数据"></a>Visitor-访问者模式：访问数据结构并处理数据</h3><p>对象接受访问，委托访问者调用访问方法，将数据结构和处理数据分离开。与Strategy相似，有时访问者所访问的数据结构会使用Composite模式。</p>
 <h3 id="Chain-of-Resposibility-责任链模式：推卸责任"><a href="#Chain-of-Resposibility-责任链模式：推卸责任" class="headerlink" title="Chain of Resposibility-责任链模式：推卸责任"></a>Chain of Resposibility-责任链模式：推卸责任</h3><p>处理类接到请求时，自己先尝试做，如果做不了将会交个下一个处理类做，以此类推。我觉得和switch case相似。</p>
-<h3 id="Facade-外观模式：简单窗口"><a href="#Facade-外观模式：简单窗口" class="headerlink" title="Facade-外观模式：简单窗口"></a>Facade-外观模式：简单窗口</h3><p>面对一大堆复杂的借口，将这些复杂的借口整合在一起完成工作，程序员只需面对一个窗口进行编程。前人栽树后人乘凉的设计模式</p>
+<h3 id="Facade-外观模式：简单窗口"><a href="#Facade-外观模式：简单窗口" class="headerlink" title="Facade-外观模式：简单窗口"></a>Facade-外观模式：简单窗口</h3><p>面对一大堆复杂的借口，将这些复杂的借口整合在一起完成工作，程序员只需面对一个窗口进行编程。前人栽树后人乘凉的设计模式。</p>
 <h3 id="Mediator-仲裁者模式：只有一个仲裁者"><a href="#Mediator-仲裁者模式：只有一个仲裁者" class="headerlink" title="Mediator-仲裁者模式：只有一个仲裁者"></a>Mediator-仲裁者模式：只有一个仲裁者</h3><p>小组成员只知道自己做什么事，不用知道什么时候做，统一交给组长来处理逻辑。组员之间不通信，只和组长通信。</p>
 <h3 id="Observer-观察者模式：发送状态变化通知"><a href="#Observer-观察者模式：发送状态变化通知" class="headerlink" title="Observer-观察者模式：发送状态变化通知"></a>Observer-观察者模式：发送状态变化通知</h3><p>说是观察者模式，更像是接受者模式。当对象发生改变通知给观察者，观察者作出处理。</p>
 <h3 id="Memento-备忘录模式：保存对象状态"><a href="#Memento-备忘录模式：保存对象状态" class="headerlink" title="Memento-备忘录模式：保存对象状态"></a>Memento-备忘录模式：保存对象状态</h3><p>我更喜欢叫存档模式，就像玩游戏一样，在自己状态最好的时候，或者Boss门口的时候存档，打不过再读档。</p>

@@ -467,41 +467,143 @@ footer {
     font-size: 20px;
 }
 
-.post-container{
+.post-container {
     min-width: 950px;
     max-width: 1325px;
     margin: 0 auto;
 }
 
-.post-title{
+.post-title {
     color: #f90;
     font-size: 40px;
 }
 
-.post-content a,a:link,a:visited,a:focus{
-    text-decoration:none;color:#fff;
+.post-content a,
+a:link,
+a:visited,
+a:focus {
+    text-decoration: none;
+    color: #fff;
 }
 
-.post-content a[target="_blank"]{
-    position:relative;
+.post-content a[target="_blank"] {
+    position: relative;
 }
 
-.post-content a[target="_blank"]::after{
-    content:'';
-    display:block;
-    width:0;
-    height:3px;
-    position:absolute;
-    left:0;
-    bottom:-5px;
-    background:#f90;
-    transition:all 1.0s ease-in-out;
+.post-content a[target="_blank"]::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    background: #f90;
+    transition: all 1.0s ease-in-out;
 }
 
-.post-content a[target="_blank"]:hover::after{
-    width:100%;
+.post-content a[target="_blank"]:hover::after {
+    width: 100%;
 }
 
-.post-container{
+.post-container {
     min-height: calc(100vh - 160px);
+}
+
+.post-content {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.post-content a[target="_blank"]::before {
+    content: "\f08e        ";
+    color: #f90;
+    font-family: FontAwesome;
+    font-size: 10px;
+    padding-left: 10px;
+}
+
+.post-content h1 {
+    padding-top: 20px;
+    color: #f90;
+}
+
+.post-content h2 {
+    padding-top: 20px;
+}
+
+.post-content h2::before {
+    content: "\f030";
+    font-family: FontAwesome;
+    color: #f90;
+    padding-right: 8px;
+}
+
+.post-content h3 {
+    padding-top: 15px;
+}
+
+.post-content h3::before {
+    content: "\f111";
+    color: #f90;
+    font-family: FontAwesome;
+    padding-right: 8px;
+}
+
+.post-content h4 {
+    padding-top: 10px;
+    color: #f90;
+}
+
+.post-content h4::before {
+    content: "\f10c";
+    color: #f90;
+    font-family: FontAwesome;
+    padding-right: 8px;
+}
+
+.post-content p {
+    padding-top: 10px;
+}
+
+.post-content blockquote {
+    color: #b3b3b3;
+}
+
+.post-content blockquote p::before {
+    color: #f90;
+    content: '\f072';
+    font-family: FontAwesome;
+    padding-right: 8px;
+}
+
+.post-content p>code {
+    background-color: #2d2d2d;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #f90;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    position: relative;
+    display: inline-block;
+}
+
+.post-content ol {
+    list-style-type: decimal;
+    padding-left: 1.5em;
+    padding-bottom: 0.5em;
+    color: #b2b2b2;
+    border: 1px solid #232323;
+}
+
+.post-content ul {
+    list-style-type: disc;
+    padding-left: 1.5em;
+    padding-bottom: 0.5em;
+    color: #b2b2b2;
+    border: 1px solid #232323;
+}
+
+.post-content strong {
+    color: #f90;
 }

@@ -4,16 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    
+
     <title>
         
-            Myth.icu | 新年快乐
-        
+                        Myth.icu |
+                        新年快乐
+                            
     </title>
     <link rel="stylesheet" href="/css/master.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="shortcut icon" type="image/x-icon" href="/image/favicon.png">
-<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 <body>
     <header>
@@ -87,29 +89,29 @@
 <p><a target="_blank" rel="noopener" href="https://594188.xyz/">https://594188.xyz</a></p>
 <h3 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h3><p>下载<a target="_blank" rel="noopener" href="http://sc.chinaz.com/jiaoben/181226502500.htm" title="2019新年倒计时雪花代码">2019新年倒计时雪花代码</a></p>
 <p>添加每隔三秒修改背景图片Js代码</p>
-<pre><code>function reloadBcakGround(){
-    img_index = randomNum(1,52);
-    document.body.style.backgroundImage = "url(img/ll/"+img_index+".jpg)";
-    document.body.style.backgroundRepeat="repeat";
-    document.body.style.backgroundSize = "contain";
-    setTimeout(reloadBcakGround,5000);
-}
-setTimeout(reloadBcakGround,3000)</code></pre>
+<pre class="line-numbers language-python"><code class="language-python">function reloadBcakGround<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    img_index <span class="token operator">=</span> randomNum<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">52</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundImage <span class="token operator">=</span> <span class="token string">"url(img/ll/"</span><span class="token operator">+</span>img_index<span class="token operator">+</span><span class="token string">".jpg)"</span><span class="token punctuation">;</span>
+    document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundRepeat<span class="token operator">=</span><span class="token string">"repeat"</span><span class="token punctuation">;</span>
+    document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundSize <span class="token operator">=</span> <span class="token string">"contain"</span><span class="token punctuation">;</span>
+    setTimeout<span class="token punctuation">(</span>reloadBcakGround<span class="token punctuation">,</span><span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+setTimeout<span class="token punctuation">(</span>reloadBcakGround<span class="token punctuation">,</span><span class="token number">3000</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>将准备好的图片放入一个文件夹中，批量重命名我用的python写的，别的语言也行,cmd也可以实现:</p>
-<pre><code>import os
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> os
 
-path1 = 'C:\\Users\\myth\\Desktop\\jiaoben6452\\img\\ll'  # 所需修改文件夹所在路径
-dirs = os.listdir(path1)
+path1 <span class="token operator">=</span> <span class="token string">'C:\\Users\\myth\\Desktop\\jiaoben6452\\img\\ll'</span>  <span class="token comment" spellcheck="true"># 所需修改文件夹所在路径</span>
+dirs <span class="token operator">=</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>path1<span class="token punctuation">)</span>
 
-i = 1
-for dir in dirs:
-    print(dir)
-    os.rename(os.path.join(path1, dir), os.path.join(path1, str(i))+".jpg")
-    print("重命名成功!")
-    i += 1
+i <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">for</span> dir <span class="token keyword">in</span> dirs<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>dir<span class="token punctuation">)</span>
+    os<span class="token punctuation">.</span>rename<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>path1<span class="token punctuation">,</span> dir<span class="token punctuation">)</span><span class="token punctuation">,</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>path1<span class="token punctuation">,</span> str<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">".jpg"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"重命名成功!"</span><span class="token punctuation">)</span>
+    i <span class="token operator">+=</span> <span class="token number">1</span>
 
-# 打印出重命名后的目录
-print("目录为: %s" % os.listdir(os.getcwd()))</code></pre>
+<span class="token comment" spellcheck="true"># 打印出重命名后的目录</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"目录为: %s"</span> <span class="token operator">%</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>os<span class="token punctuation">.</span>getcwd<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>最后因嫌弃图片加载速度太慢，上了腾讯云的cos</p>
 <script>
         document.querySelectorAll('.github-emoji')

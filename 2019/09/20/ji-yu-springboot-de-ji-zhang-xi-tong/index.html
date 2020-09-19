@@ -4,16 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    
+
     <title>
         
-            Myth.icu | 基于springboot的记账系统
-        
+                        Myth.icu |
+                        基于springboot的记账系统
+                            
     </title>
     <link rel="stylesheet" href="/css/master.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="shortcut icon" type="image/x-icon" href="/image/favicon.png">
-<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 <body>
     <header>
@@ -86,21 +88,31 @@
         <p>七月初来的北京，对自己的花销一直没有具体记录，全都靠人脑记录</p>
 <p>很久之前就有这个记账系统的想法，九月初开始使用至今快一个月，还算满足了自己的需求</p>
 <h2 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h2><p>前端：</p>
-<pre><code>layui的数据表格作为展示详情信息
-
-chartjs用于展示饼状图折线图</code></pre>
+<ul>
+<li><p>layui的数据表格作为展示详情信息</p>
+</li>
+<li><p>chartjs用于展示饼状图折线图</p>
+</li>
+</ul>
 <p>后端:</p>
-<pre><code>简单的springboot处理请求</code></pre>
+<ul>
+<li>简单的springboot处理请求</li>
+</ul>
 <p>数据库:</p>
-<pre><code>饼状图: where type = "支出" order by time desc  group by tag
-
-折线图:
-    因为考虑到即使今天没有花销也要在图表中对应的日期显示为0，而不是空。
-    网上其他人的解决方案是通过mysql建立临时表，然后 group by 天 进行对比查询.
-    我的解决方案是放到java中 新建一个 长度为当前月份的天数 的数组 new double[nowMonth.datCount].
-    将mysql发送来的数据 group by 天 一次插入对应下标-1。
-    如第一天的花销为 arr[0],第十天的花销为 arr[9],第n天为 arr[n-1]。
-    利用java中double数组元素默认为0，解决了这个问题。</code></pre>
+<ul>
+<li><p>饼状图: where type = “支出” order by time desc  group by tag</p>
+</li>
+<li><p>折线图:</p>
+<ul>
+<li>因为考虑到即使今天没有花销也要在图表中对应的日期显示为0，而不是空。</li>
+<li>网上其他人的解决方案是通过mysql建立临时表，然后 group by 天 进行对比查询.</li>
+<li>我的解决方案是放到java中 新建一个 长度为当前月份的天数 的数组 new double[nowMonth.datCount].</li>
+<li>将mysql发送来的数据 group by 天 一次插入对应下标-1。</li>
+<li>如第一天的花销为 arr[0],第十天的花销为 arr[9],第n天为 arr[n-1]。</li>
+<li>利用java中double数组元素默认为0，解决了这个问题。</li>
+</ul>
+</li>
+</ul>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {

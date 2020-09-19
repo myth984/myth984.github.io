@@ -4,16 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    
+
     <title>
         
-            Myth.icu | 按一下钮放一句屁：树莓派+音响+按钮+腾讯云TTS+一言
-        
+                        Myth.icu |
+                        按一下钮放一句屁：树莓派+音响+按钮+腾讯云TTS+一言
+                            
     </title>
     <link rel="stylesheet" href="/css/master.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="shortcut icon" type="image/x-icon" href="/image/favicon.png">
-<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 <body>
     <header>
@@ -105,56 +107,56 @@
 <p>编写下载好的.py文件</p>
 <p><code>vi tcloud_tts.py</code></p>
 <p>修改成这样</p>
-<pre><code># coding=UTF-8
-import requests
-import wave
-import json
-import base64
-import time
-import collections
-import os
-from request_util import request, authorization
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># coding=UTF-8</span>
+<span class="token keyword">import</span> requests
+<span class="token keyword">import</span> wave
+<span class="token keyword">import</span> json
+<span class="token keyword">import</span> base64
+<span class="token keyword">import</span> time
+<span class="token keyword">import</span> collections
+<span class="token keyword">import</span> os
+<span class="token keyword">from</span> request_util <span class="token keyword">import</span> request<span class="token punctuation">,</span> authorization
 
-def task_process():
-    req = request()
-    req.init()
-    auth = authorization()
-    auth.init()
-    url = 'https://v1.hitokoto.cn/?encode=text'
-    world = requests.get(url).text
-    #request_data = collections.OrderedDict()
-    request_data = dict()
-    request_data['Action'] = 'TextToStreamAudio'
-    request_data['AppId'] = auth.AppId
-    request_data['Codec'] = req.Codec
-    request_data['Expired'] = int(time.time()) + auth.Expired
-    request_data['ModelType'] = req.ModelType
-    request_data['PrimaryLanguage'] = req.PrimaryLanguage
-    request_data['ProjectId'] = req.ProjectId
-    request_data['SampleRate'] = req.SampleRate
-    request_data['SecretId'] = auth.SecretId
-    request_data['SessionId'] = req.SessionId
-    request_data['Speed'] = -1
-    request_data['Text'] = '一言:'+world
-    request_data['Timestamp'] = int(time.time())
-    request_data['VoiceType'] = req.VoiceType
-    request_data['Volume'] = req.Volume
+<span class="token keyword">def</span> <span class="token function">task_process</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    req <span class="token operator">=</span> request<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    req<span class="token punctuation">.</span>init<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    auth <span class="token operator">=</span> authorization<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    auth<span class="token punctuation">.</span>init<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    url <span class="token operator">=</span> <span class="token string">'https://v1.hitokoto.cn/?encode=text'</span>
+    world <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span>text
+    <span class="token comment" spellcheck="true">#request_data = collections.OrderedDict()</span>
+    request_data <span class="token operator">=</span> dict<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    request_data<span class="token punctuation">[</span><span class="token string">'Action'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'TextToStreamAudio'</span>
+    request_data<span class="token punctuation">[</span><span class="token string">'AppId'</span><span class="token punctuation">]</span> <span class="token operator">=</span> auth<span class="token punctuation">.</span>AppId
+    request_data<span class="token punctuation">[</span><span class="token string">'Codec'</span><span class="token punctuation">]</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>Codec
+    request_data<span class="token punctuation">[</span><span class="token string">'Expired'</span><span class="token punctuation">]</span> <span class="token operator">=</span> int<span class="token punctuation">(</span>time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> auth<span class="token punctuation">.</span>Expired
+    request_data<span class="token punctuation">[</span><span class="token string">'ModelType'</span><span class="token punctuation">]</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>ModelType
+    request_data<span class="token punctuation">[</span><span class="token string">'PrimaryLanguage'</span><span class="token punctuation">]</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>PrimaryLanguage
+    request_data<span class="token punctuation">[</span><span class="token string">'ProjectId'</span><span class="token punctuation">]</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>ProjectId
+    request_data<span class="token punctuation">[</span><span class="token string">'SampleRate'</span><span class="token punctuation">]</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>SampleRate
+    request_data<span class="token punctuation">[</span><span class="token string">'SecretId'</span><span class="token punctuation">]</span> <span class="token operator">=</span> auth<span class="token punctuation">.</span>SecretId
+    request_data<span class="token punctuation">[</span><span class="token string">'SessionId'</span><span class="token punctuation">]</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>SessionId
+    request_data<span class="token punctuation">[</span><span class="token string">'Speed'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+    request_data<span class="token punctuation">[</span><span class="token string">'Text'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'一言:'</span><span class="token operator">+</span>world
+    request_data<span class="token punctuation">[</span><span class="token string">'Timestamp'</span><span class="token punctuation">]</span> <span class="token operator">=</span> int<span class="token punctuation">(</span>time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    request_data<span class="token punctuation">[</span><span class="token string">'VoiceType'</span><span class="token punctuation">]</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>VoiceType
+    request_data<span class="token punctuation">[</span><span class="token string">'Volume'</span><span class="token punctuation">]</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>Volume
 
-    signature = auth.generate_sign(request_data = request_data)
-    header = {
-        "Content-Type": "application/json",
-        "Authorization": signature
-    }
-    url = "https://tts.cloud.tencent.com/stream"
+    signature <span class="token operator">=</span> auth<span class="token punctuation">.</span>generate_sign<span class="token punctuation">(</span>request_data <span class="token operator">=</span> request_data<span class="token punctuation">)</span>
+    header <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">"Content-Type"</span><span class="token punctuation">:</span> <span class="token string">"application/json"</span><span class="token punctuation">,</span>
+        <span class="token string">"Authorization"</span><span class="token punctuation">:</span> signature
+    <span class="token punctuation">}</span>
+    url <span class="token operator">=</span> <span class="token string">"https://tts.cloud.tencent.com/stream"</span>
 
-    r = requests.post(url, headers=header, data=json.dumps(request_data), stream = True)
-    '''
+    r <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>header<span class="token punctuation">,</span> data<span class="token operator">=</span>json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>request_data<span class="token punctuation">)</span><span class="token punctuation">,</span> stream <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+    <span class="token triple-quoted-string string">'''
     if str(r.content).find("Error") != -1 :
         print(r.content)
         return
-    '''
-    i = 1
-    wavfile = wave.open('test.wav</code></pre>
+    '''</span>
+    i <span class="token operator">=</span> <span class="token number">1</span>
+    wavfile <span class="token operator">=</span> wave<span class="token punctuation">.</span>open<span class="token punctuation">(</span>'test<span class="token punctuation">.</span>wav<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
