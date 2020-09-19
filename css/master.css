@@ -33,12 +33,11 @@ header {
 #headerContainer {
     height: 100%;
     display: grid;
-    grid-template-columns: 200px 1fr 250px 220px;
+    grid-template-columns: 0px 200px 0.5fr;
     grid-gap: 10px;
     justify-items: center;
     align-items: center;
     margin: auto;
-    min-width: 991px;
     max-width: 1323px;
     width: 96%;
 }
@@ -56,7 +55,7 @@ header {
 #search {
     height: 26px;
     display: grid;
-    grid-template-columns: 7fr minmax(52px, 1fr) minmax(48px, 1fr);
+    grid-template-columns: 7fr minmax(52px, 1fr);
     width: 100%;
     border: 1px solid transparent;
 }
@@ -67,7 +66,6 @@ header {
     border: none;
     color: #cacaca;
     background-color: #363636;
-    display: inline-block;
     font-size: 14px;
     outline: 0;
     padding: 2px 5px;
@@ -97,7 +95,6 @@ header {
 }
 
 #headerCampaignDiv {
-    min-width: 991px;
     max-width: 1323px;
     width: 96%;
     height: 100%;
@@ -165,7 +162,6 @@ ul#headerMainMenu>li.menu>a>.itemName {
 }
 
 .container {
-    min-width: 991px;
     max-width: 1323px;
     width: 96%;
     margin: 10px auto;
@@ -195,7 +191,11 @@ ul#headerMainMenu>li.menu>a>.itemName {
     padding: 15px;
     position: relative;
     text-align: center;
-    width: 900px;
+    width: 80%;
+}
+
+#closeSwitchEnglish {
+    cursor: pointer;
 }
 
 #countryRedirectMessage .orangeLink {
@@ -325,8 +325,8 @@ ul.videos li .wrap .phimage img {
 }
 
 .full-row-thumbs.videos li.videoBox .wrap .img img {
-    height: 131px;
-    width: 233px;
+    /* height: 131px; */
+    /* width: 233px; */
     position: relative;
 }
 
@@ -440,7 +440,6 @@ footer {
 }
 
 .footer-wrapper {
-    min-width: 950px;
     max-width: 1325px;
     height: 100%;
     width: 96%;
@@ -468,7 +467,6 @@ footer {
 }
 
 .post-container {
-    min-width: 950px;
     max-width: 1325px;
     margin: 0 auto;
 }
@@ -606,4 +604,36 @@ a:focus {
 
 .post-content strong {
     color: #f90;
+}
+
+@media only screen and (max-width: 550px) {
+    #hotVideosSection {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .blogImage {
+        width: 100%;
+    }
+    .full-row-thumbs.videos li.videoBox .wrap {
+        width: 100%;
+    }
+    .search-input {
+        display: none;
+    }
+    #headerContainer {
+        grid-template-columns: 52px auto 52px;
+    }
+    #search {
+        grid-template-columns: none;
+    }
+    .search-btn {
+        background-color: unset !important;
+        font-size: 22px;
+        color: #999;
+    }
+    #headerWrapper {
+        height: 48px;
+    }
+    .logo img {
+        height: 32px;
+    }
 }

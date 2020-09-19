@@ -32,3 +32,15 @@ const loadPostInfo = function() {
     }
 }
 loadPostInfo()
+
+document.getElementsByClassName('search-btn')[0].onclick = () => {
+    alert("搜索正在施工")
+}
+
+document.getElementById('switchEnglish').onclick = () => {
+    alert("没有英文")
+}
+
+document.getElementById('closeSwitchEnglish').onclick = () => {
+    document.getElementById('countryRedirectMessage').remove();
+}
