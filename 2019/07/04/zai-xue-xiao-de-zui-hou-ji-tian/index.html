@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/css/master.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="shortcut icon" type="image/x-icon" href="/image/favicon.png">
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 <meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
@@ -21,7 +22,9 @@
     <header>
     <div id="headerWrapper">
         <div id="headerContainer">
-            <div class="phoneMenu"></div>
+            <div class="phoneMenu">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
             <div class="logo">
                 <a href="/">
                     <img src="/image/logo.png">
@@ -45,7 +48,7 @@
                             <span class="itemName">
                                 博客
                                 
-                                </span>
+                            </span>
 
 
                         </a>
@@ -55,7 +58,7 @@
                             <span class="itemName">
                                 朋友
                                 
-                                </span>
+                            </span>
                         </a>
                     </li>
                     <li class="menu">
@@ -63,28 +66,38 @@
                             <span class="itemName">
                                 关于
                                 
-                                </span>
+                            </span>
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
-
+    </div>
+    <div id="phoneMenuPanel">
+        
+        <div class="phoneMenuItem"><a href="/">博客</a></div>
+        
+        
+        <div class="phoneMenuItem"><a href="/friends">朋友</a></div>
+        
+        
+        <div class="phoneMenuItem"><a href="/about">关于</a></div>
+        
     </div>
 </header>
 <div class="post-container">
     <div class="post-title">
 
         
-            在学校的最后几天
+        在学校的最后几天
         
     </div>
     
-        <div class="post-date">
-            2019-07-04
-        </div>
+    <div class="post-date">
+        2019-07-04
+    </div>
     
-    
+
     <div class="post-content">
         <p>说些只有晚上睡不着的时候才能说出的话。三年也太快了，刚入学的时候知道大学时光会很快，真的没想到会这么快，快到还记得清刚进入校门的心情，以前怎么就没好好的看看这里的风景呢。</p>
 <p>说起学校没有感恩，没有抱怨。还是想说一句，我们学校真的是好手段啊，入学时说的是在校三年，大四安排&lt;实训&gt;，乍一听以为是实习，那时也稀里糊涂。如今才知道实训不等于实习，实训就是培训。文字游戏吗，说不上，只能怪自己高中没有努力，怨不得别的什么。</p>
@@ -113,7 +126,19 @@
           });
       </script>
     </div>
+    
+    <div id="vcomments"></div>
+    
 </div>
+
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'tvKlLbI84r2fvwfJfCXM3Him-gzGzoHsz',
+        appKey: 'pQt7B5oC98LGDyR2bAbQYdue',
+        placeholder: '分享你的看文感受',
+    })
+</script>
 <footer>
     <div class="footer-wrapper">
         <div class="socialLink">
@@ -126,5 +151,4 @@
     </div>
 </footer>
 </body>
-
 </html>

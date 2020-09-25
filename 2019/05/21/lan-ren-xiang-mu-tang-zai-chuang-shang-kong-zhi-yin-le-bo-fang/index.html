@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/css/master.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="shortcut icon" type="image/x-icon" href="/image/favicon.png">
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 <meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
@@ -21,7 +22,9 @@
     <header>
     <div id="headerWrapper">
         <div id="headerContainer">
-            <div class="phoneMenu"></div>
+            <div class="phoneMenu">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
             <div class="logo">
                 <a href="/">
                     <img src="/image/logo.png">
@@ -45,7 +48,7 @@
                             <span class="itemName">
                                 博客
                                 
-                                </span>
+                            </span>
 
 
                         </a>
@@ -55,7 +58,7 @@
                             <span class="itemName">
                                 朋友
                                 
-                                </span>
+                            </span>
                         </a>
                     </li>
                     <li class="menu">
@@ -63,28 +66,38 @@
                             <span class="itemName">
                                 关于
                                 
-                                </span>
+                            </span>
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
-
+    </div>
+    <div id="phoneMenuPanel">
+        
+        <div class="phoneMenuItem"><a href="/">博客</a></div>
+        
+        
+        <div class="phoneMenuItem"><a href="/friends">朋友</a></div>
+        
+        
+        <div class="phoneMenuItem"><a href="/about">关于</a></div>
+        
     </div>
 </header>
 <div class="post-container">
     <div class="post-title">
 
         
-            懒人项目——躺在床上控制音乐播放
+        懒人项目——躺在床上控制音乐播放
         
     </div>
     
-        <div class="post-date">
-            2019-05-21
-        </div>
+    <div class="post-date">
+        2019-05-21
+    </div>
     
-    
+
     <div class="post-content">
         <h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>想要躺在床上听音乐，又懒的下床换音乐，买的二手4s也不知道怎么发挥他的余热。于是萌生了远控电脑放音乐的想法。</p>
 <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>被控制的电脑作为后台服务器，网页发送请求给服务器，服务器用Robot模拟快捷键操作</p>
@@ -111,7 +124,19 @@
           });
       </script>
     </div>
+    
+    <div id="vcomments"></div>
+    
 </div>
+
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'tvKlLbI84r2fvwfJfCXM3Him-gzGzoHsz',
+        appKey: 'pQt7B5oC98LGDyR2bAbQYdue',
+        placeholder: '分享你的看文感受',
+    })
+</script>
 <footer>
     <div class="footer-wrapper">
         <div class="socialLink">
@@ -124,5 +149,4 @@
     </div>
 </footer>
 </body>
-
 </html>

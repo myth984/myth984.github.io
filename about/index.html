@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/css/master.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="shortcut icon" type="image/x-icon" href="/image/favicon.png">
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 <meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
@@ -20,7 +21,9 @@
     <header>
     <div id="headerWrapper">
         <div id="headerContainer">
-            <div class="phoneMenu"></div>
+            <div class="phoneMenu">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
             <div class="logo">
                 <a href="/">
                     <img src="/image/logo.png">
@@ -44,7 +47,7 @@
                             <span class="itemName">
                                 博客
                                 
-                                </span>
+                            </span>
 
 
                         </a>
@@ -54,7 +57,7 @@
                             <span class="itemName">
                                 朋友
                                 
-                                </span>
+                            </span>
                         </a>
                     </li>
                     <li class="menu">
@@ -62,28 +65,38 @@
                             <span class="itemName">
                                 关于
                                 
-                                    <span class="activeLine"></span>
-                            
-                                </span>
+                                <span class="activeLine"></span>
+                                
+                            </span>
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
-
+    </div>
+    <div id="phoneMenuPanel">
+        
+        <div class="phoneMenuItem"><a href="/">博客</a></div>
+        
+        
+        <div class="phoneMenuItem"><a href="/friends">朋友</a></div>
+        
+        
+        <div class="phoneMenuItem active"><a href="/about">关于</a></div>
+        
     </div>
 </header>
 <div class="post-container">
     <div class="post-title">
 
         
-            关于
+        关于
         
     </div>
     
 
     
-    
+
     <div class="post-content">
         <h1 id="Myth"><a href="#Myth" class="headerlink" title="Myth"></a>Myth</h1><h2 id="博主"><a href="#博主" class="headerlink" title="博主"></a>博主</h2><h3 id="我的名字叫yth-m与I’m同音-故起名Myth"><a href="#我的名字叫yth-m与I’m同音-故起名Myth" class="headerlink" title="我的名字叫yth, m与I’m同音,故起名Myth"></a>我的名字叫yth, m与I’m同音,故起名Myth</h3><h3 id="98年生人"><a href="#98年生人" class="headerlink" title="98年生人"></a>98年生人</h3><h3 id="工作目前为某资管公司的全沾工程师"><a href="#工作目前为某资管公司的全沾工程师" class="headerlink" title="工作目前为某资管公司的全沾工程师"></a>工作目前为某资管公司的<strong>全沾工程师</strong></h3><pre class="line-numbers language-python"><code class="language-python">author<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"myth"</span>
 author<span class="token punctuation">.</span>birth<span class="token punctuation">.</span>year <span class="token operator">=</span> <span class="token number">1998</span>
@@ -108,7 +121,17 @@ author<span class="token punctuation">.</span>work <span class="token operator">
           });
       </script>
     </div>
+    
 </div>
+
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'tvKlLbI84r2fvwfJfCXM3Him-gzGzoHsz',
+        appKey: 'pQt7B5oC98LGDyR2bAbQYdue',
+        placeholder: '分享你的看文感受',
+    })
+</script>
 <footer>
     <div class="footer-wrapper">
         <div class="socialLink">
@@ -121,5 +144,4 @@ author<span class="token punctuation">.</span>work <span class="token operator">
     </div>
 </footer>
 </body>
-
 </html>

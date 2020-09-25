@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/css/master.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="shortcut icon" type="image/x-icon" href="/image/favicon.png">
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 <meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
@@ -21,7 +22,9 @@
     <header>
     <div id="headerWrapper">
         <div id="headerContainer">
-            <div class="phoneMenu"></div>
+            <div class="phoneMenu">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
             <div class="logo">
                 <a href="/">
                     <img src="/image/logo.png">
@@ -45,7 +48,7 @@
                             <span class="itemName">
                                 博客
                                 
-                                </span>
+                            </span>
 
 
                         </a>
@@ -55,7 +58,7 @@
                             <span class="itemName">
                                 朋友
                                 
-                                </span>
+                            </span>
                         </a>
                     </li>
                     <li class="menu">
@@ -63,28 +66,38 @@
                             <span class="itemName">
                                 关于
                                 
-                                </span>
+                            </span>
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
-
+    </div>
+    <div id="phoneMenuPanel">
+        
+        <div class="phoneMenuItem"><a href="/">博客</a></div>
+        
+        
+        <div class="phoneMenuItem"><a href="/friends">朋友</a></div>
+        
+        
+        <div class="phoneMenuItem"><a href="/about">关于</a></div>
+        
     </div>
 </header>
 <div class="post-container">
     <div class="post-title">
 
         
-            关于八月
+        关于八月
         
     </div>
     
-        <div class="post-date">
-            2019-08-27
-        </div>
+    <div class="post-date">
+        2019-08-27
+    </div>
     
-    
+
     <div class="post-content">
         <p>在北京快两个月时间了，还过得去，没想的那么苦，也没家里和上学那么快乐。唯一的区别就是更自由了些。</p>
 <h2 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h2><p>领导对我很不错，每天上下班时间长了点剩下没什么可调的。这一阵的工作我掌握了 北京周一会堵车的道理，每次周一上班我都要祈祷不要堵车。</p>
@@ -110,7 +123,19 @@
           });
       </script>
     </div>
+    
+    <div id="vcomments"></div>
+    
 </div>
+
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'tvKlLbI84r2fvwfJfCXM3Him-gzGzoHsz',
+        appKey: 'pQt7B5oC98LGDyR2bAbQYdue',
+        placeholder: '分享你的看文感受',
+    })
+</script>
 <footer>
     <div class="footer-wrapper">
         <div class="socialLink">
@@ -123,5 +148,4 @@
     </div>
 </footer>
 </body>
-
 </html>
