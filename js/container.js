@@ -16,10 +16,10 @@ const loadPostInfo = function() {
             i.src = '/image/blog-image/' + randNum(1, 316) + '.jpg'
         })
     }
-    // for (let i of document.getElementsByClassName("js-viewCount")) {
-    //     let r = Math.random()
-    //     i.innerHTML = Math.round(r * 1000) + (r > 0.5 ? 'M' : 'K') + '次观看'
-    // }
+    for (let i of document.getElementsByClassName("js-viewCount")) {
+        let r = Math.random()
+        i.innerHTML = Math.round(r * 1000) + (r > 0.5 ? 'M' : 'K') + '次观看'
+    }
     for (let i of document.getElementsByClassName("js-likeCount")) {
         let min = 70;
         let max = 100;
