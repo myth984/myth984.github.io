@@ -499,7 +499,6 @@ a:focus {
     background: #f90;
     transition: all 1.0s ease-in-out;
 }
-
 .post-content a[target="_blank"]:hover::after {
     width: 100%;
 }
@@ -707,6 +706,12 @@ a:focus {
 }
 .v[data-class=v] .vempty {
     display: none !important;
+}
+.v[data-class=v] a{
+    color: white !important;
+}
+.v[data-class=v] a:hover{
+    color: #f90 !important;
 }
 
 @media only screen and (max-width: 550px) {

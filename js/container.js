@@ -1,4 +1,4 @@
-const loadPostInfo = function() {
+const loadPostInfo = function () {
     let imageSet = new Set();
     let imageHtmllCollection = document.querySelectorAll("#hotVideosSection .videoPreviewBg img")
     let maxImageSum = 316;
@@ -25,12 +25,31 @@ const loadPostInfo = function() {
         let max = 100;
         i.innerHTML = parseInt(Math.random() * (max - min + 1) + min, 10) + '%'
     }
+}
 
-    function randNum(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
-    }
+const randNum = function (min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+const loadLoagPage = function(){
+    let body = document.body;
+    let iframe = document.createElement("iframe");
+    iframe.src = "/loadpage/load" + randNum(1, 5) + ".html"
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    iframe.style.position = "absolute";
+    iframe.style.top = "0";
+    iframe.style.left = "0";
+    iframe.style.zIndex = 2;
+    body.style.overflow = 'hidden';
+    body.appendChild(iframe)
+    window.onload=function(){ 
+        iframe.remove();
+        body.style.overflow = 'auto';
+    } 
 }
 loadPostInfo()
+loadLoagPage()
 
 document.getElementsByClassName('search-btn')[0].onclick = () => {
     alert("搜索正在施工")
