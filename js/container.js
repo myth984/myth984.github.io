@@ -43,10 +43,11 @@ const loadLoagPage = function(){
     iframe.style.zIndex = 2;
     body.style.overflow = 'hidden';
     body.appendChild(iframe)
-    window.onload=function(){ 
+    setTimeout(removeLoadPage,5000);
+    function removeLoadPage(){
         iframe.remove();
         body.style.overflow = 'auto';
-    } 
+    }
 }
 loadPostInfo()
 loadLoagPage()
