@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width = device-width,user-scalable = no, inital-scale = 1，maximum-scale = 1 minium-scal = 1">
+    <title>
+        
+                        Myth.icu |
+                        Java中WebSocket与callable的实际运用
+                            
+    </title>
+    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/image/favicon.png">
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+    <header>
+    <div id="headerWrapper">
+        <div id="headerContainer">
+            <div class="phoneMenu">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+            <div class="logo">
+                <a href="/">
+                    <img src="/image/logo.png">
+                </a>
+            </div>
+            <div id="search">
+
+                <input class="search-input" placeholder="搜索26个博客...">
+                <button class="search-btn">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="headerMenuContainer">
+        <div id="headerMainMenuInner">
+            <div id="headerCampaignDiv">
+                <ul id="headerMainMenu">
+                    <li class="menu">
+                        <a class="active js-topMenuLink" href="/">
+                            <span class="itemName">
+                                博客
+                                
+                            </span>
+
+
+                        </a>
+                    </li>
+                    <li class="menu">
+                        <a class="active js-topMenuLink" href="/friends">
+                            <span class="itemName">
+                                朋友
+                                
+                            </span>
+                        </a>
+                    </li>
+                    <li class="menu">
+                        <a class="active js-topMenuLink" href="/about">
+                            <span class="itemName">
+                                关于
+                                
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="phoneMenuPanel">
+        
+        <div class="phoneMenuItem"><a href="/">博客</a></div>
+        
+        
+        <div class="phoneMenuItem"><a href="/friends">朋友</a></div>
+        
+        
+        <div class="phoneMenuItem"><a href="/about">关于</a></div>
+        
+    </div>
+</header>
+<script src="/js/header.js"></script>
+<div class="post-container">
+    <div class="post-title">
+
+        
+        Java中WebSocket与callable的实际运用
+        
+    </div>
+    
+    <div class="post-date">
+        2020-11-07
+    </div>
+    
+
+    <div class="post-content">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>公司最近有一个需求 需要Java通过WebSocket与Jupyter的Kernel通信</p>
+<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><p>通过Maven导入进了Java-WebSocket包</p>
+<pre class="line-numbers language-java"><code class="language-java">WebSocketClient ws <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WebSocketClient</span><span class="token punctuation">(</span>uri<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onOpen</span><span class="token punctuation">(</span>ServerHandshake handshakedata<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onMessage</span><span class="token punctuation">(</span>String message<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onClose</span><span class="token punctuation">(</span><span class="token keyword">int</span> code<span class="token punctuation">,</span> String reason<span class="token punctuation">,</span> <span class="token keyword">boolean</span> remote<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onError</span><span class="token punctuation">(</span>Exception ex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>创建websocket对象时，需要重写这四个方法</p>
+<p>因为需要在webSocket成功连接时，才可以进行通信</p>
+<p>所以我把业务逻辑写在了<code>onOpen</code>中，当websocket连接成功时，就自动发送任务，通过<code>onMessage</code>来接受消息返回的结果</p>
+<p>写个简单的例子，就像这样</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Override</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onOpen</span><span class="token punctuation">(</span>ServerHandshake handshakedata<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 执行任务</span>
+    List<span class="token operator">&lt;</span>task<span class="token operator">></span> taskList <span class="token operator">=</span> <span class="token function">getTaskList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>Task task<span class="token operator">:</span>taskList<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>task<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token annotation punctuation">@Override</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onMessage</span><span class="token punctuation">(</span>String message<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 任务完成</span>
+    Task<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>但是这种写法是有问题 因为<code>onMessage</code>是<code>WebSocketClient</code>待实现的函数，没有返回值，我无法知道所有任务什么时间都执行完毕</p>
+<p>所以对代码进行了如下改造，记录任务总数，任务完成一次进行任务总数自减操作</p>
+<p>进行死循环阻塞当任务完成时关闭webSocket连接</p>
+<pre class="line-numbers language-java"><code class="language-java">List<span class="token operator">&lt;</span>task<span class="token operator">></span> taskList <span class="token operator">=</span> <span class="token function">getTaskList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+AtomicInteger ai <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AtomicInteger</span><span class="token punctuation">(</span>taskList<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+WebSocketClient ws <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WebSocketClient</span><span class="token punctuation">(</span>uri<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onOpen</span><span class="token punctuation">(</span>ServerHandshake handshakedata<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>Task task<span class="token operator">:</span>taskList<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>task<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onMessage</span><span class="token punctuation">(</span>String message<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ai<span class="token punctuation">.</span><span class="token function">getAndDecrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onClose</span><span class="token punctuation">(</span><span class="token keyword">int</span> code<span class="token punctuation">,</span> String reason<span class="token punctuation">,</span> <span class="token keyword">boolean</span> remote<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onError</span><span class="token punctuation">(</span>Exception ex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+ws<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>ai<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        ws<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>但是这样写还是有问题的 如果与WebSocket通信出现问题可能导致程序死循环，永远结束不了，所以直接上了Callable</p>
+<p>将代码用CallAble包裹</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> Callable <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Callable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 业务逻辑</span>
+        <span class="token comment" spellcheck="true">// ...</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token function">executeTask</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 获取callable对象</span>
+    Callable call <span class="token operator">=</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 创建一个线程池</span>
+    ExecutorService EXECUTOR_SERVICE <span class="token operator">=</span> Executors<span class="token punctuation">.</span><span class="token function">newFixedThreadPool</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 提交任务 获得Futrue对象</span>
+    Future<span class="token operator">&lt;</span>Boolean<span class="token operator">></span> future <span class="token operator">=</span> EXECUTOR_SERVICE<span class="token punctuation">.</span><span class="token function">submit</span><span class="token punctuation">(</span>call<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 设置future 超时时间为 任务数量*5m+10s</span>
+    <span class="token keyword">try</span><span class="token punctuation">{</span>
+        future<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>taskList<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">5</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">1000</span> <span class="token operator">+</span> <span class="token number">10000</span><span class="token punctuation">,</span> TimeUnit<span class="token punctuation">.</span>MILLISECONDS<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span>TimeoutException e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 任务超时处理逻辑</span>
+        <span class="token comment" spellcheck="true">// ...</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>通过callable解决了这种可能因网络连接造成的问题，不得不说future真的好用</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>双拼真的好用，打字速度真的有很大提升，学习一周，实用一生。所以双拼我的双拼练习网站因为学生服务器到期导致已经停止服务了，最近有时间写一个纯JavaScript版本的吧。</p>
+<p>最近和女朋友在玩马里奥赛车 还是挺好玩的</p>
+<p>写博客最近真的缺乏动力，不是因为觉得写打字麻烦 而是因为组织语言麻烦</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+    </div>
+    
+    <div id="vcomments"></div>
+    
+</div>
+
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'tvKlLbI84r2fvwfJfCXM3Him-gzGzoHsz',
+        appKey: 'pQt7B5oC98LGDyR2bAbQYdue',
+        placeholder: '分享你的看文感受',
+    })
+</script>
+<footer>
+    <div class="footer-wrapper">
+        <div class="socialLink">
+            <a href="https://github.com/myth984/" target="_blank">
+                <i class="fa fa-github fa-2x" aria-hidden="true">
+                </i>
+            </a>
+        </div>
+        <div class="copyright">© Myth.icu, 2020</div>
+    </div>
+</footer>
+</body>
+</html>
