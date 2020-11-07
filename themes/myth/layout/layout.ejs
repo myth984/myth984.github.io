@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width = device-width,user-scalable = no, inital-scale = 1，maximum-scale = 1 minium-scal = 1">
+    <title>
+        <% if(path == 'index.html'){ %>
+            Myth.icu
+            <% }else if(path == 'friends/index.html'){ %>
+                Myth.icu | 朋友
+                <% }else if(path == 'about/index.html'){ %>
+                    Myth.icu | 关于
+                    <% }else{ %>
+                        Myth.icu |
+                        <%- page.title %>
+                            <% } %>
+    </title>
+    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/image/favicon.png">
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+</head>
+
+<body>
+    <%- body %>
+</body>
+</html>

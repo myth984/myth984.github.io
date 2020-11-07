@@ -1,0 +1,79 @@
+<header>
+    <div id="headerWrapper">
+        <div id="headerContainer">
+            <div class="phoneMenu">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+            <div class="logo">
+                <a href="/">
+                    <img src="/image/logo.png">
+                </a>
+            </div>
+            <div id="search">
+
+                <input class="search-input" placeholder="搜索<%- site.posts.length %>个博客...">
+                <button class="search-btn">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="headerMenuContainer">
+        <div id="headerMainMenuInner">
+            <div id="headerCampaignDiv">
+                <ul id="headerMainMenu">
+                    <li class="menu">
+                        <a class="active js-topMenuLink" href="/">
+                            <span class="itemName">
+                                博客
+                                <% if(path == 'index.html'){ %>
+                                <span class="activeLine"></span>
+                                <% } %>
+                            </span>
+
+
+                        </a>
+                    </li>
+                    <li class="menu">
+                        <a class="active js-topMenuLink" href="/friends">
+                            <span class="itemName">
+                                朋友
+                                <% if(path == 'friends/index.html'){ %>
+                                <span class="activeLine"></span>
+                                <% } %>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="menu">
+                        <a class="active js-topMenuLink" href="/about">
+                            <span class="itemName">
+                                关于
+                                <% if(path == 'about/index.html'){ %>
+                                <span class="activeLine"></span>
+                                <% } %>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="phoneMenuPanel">
+        <% if(path == 'index.html'){ %>
+        <div class="phoneMenuItem active"><a href="/">博客</a></div>
+        <% }else{ %>
+        <div class="phoneMenuItem"><a href="/">博客</a></div>
+        <% } %>
+        <% if(path == 'friends/index.html'){ %>
+        <div class="phoneMenuItem active"><a href="/friends">朋友</a></div>
+        <% }else{ %>
+        <div class="phoneMenuItem"><a href="/friends">朋友</a></div>
+        <% } %>
+        <% if(path=='about/index.html'){ %>
+        <div class="phoneMenuItem active"><a href="/about">关于</a></div>
+        <% }else{ %>
+        <div class="phoneMenuItem"><a href="/about">关于</a></div>
+        <% } %>
+    </div>
+</header>
+<script src="/js/header.js"></script>

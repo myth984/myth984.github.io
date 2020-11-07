@@ -1,0 +1,53 @@
+<div class="container">
+    <div id="countryRedirectMessage" style="display: block;">
+        当前您正在用中文（简体）浏览Mythicu。
+        <a class="orangeLink" id="switchEnglish">
+            Switch to English            
+        </a>
+        <i id="closeSwitchEnglish" aria-hidden="true">×</i>
+    </div>
+    <div class="frontListingWrapper">
+        <div class="sectionWrapper">
+            <div class="sectionTitle">
+                <h1>
+                    <a>
+                        全球热门博客
+                        <i class="fa fa-flag" aria-hidden="true"></i>
+                    </a>
+                </h1>
+            </div>
+            <ul id="hotVideosSection" class="full-row-thumbs videos">
+                <% site.posts.sort('-date').forEach(function(post){ %>
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/<%- post.path %>">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/<%- post.path %>" class="leancloud_visitors">
+                                    <%- post.title %>
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        <%- date(post.date, "YYYY-MM-DD") %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <% }); %>
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="/js/container.js"></script>

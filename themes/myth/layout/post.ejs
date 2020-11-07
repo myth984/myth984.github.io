@@ -1,0 +1,39 @@
+<%- include("header.ejs") %>
+<div class="post-container">
+    <div class="post-title">
+
+        <% if(path == 'friends/index.html'){ %>
+        朋友
+        <% }else if(path == 'about/index.html'){ %>
+        关于
+        <% }else{ %>
+        <%- page.title %>
+        <% } %>
+    </div>
+    <% if(path == 'friends/index.html'){ %>
+
+    <% }else if(path == 'about/index.html'){ %>
+
+    <% }else{ %>
+    <div class="post-date">
+        <%- date(page.date, "YYYY-MM-DD") %>
+    </div>
+    <% } %>
+
+    <div class="post-content">
+        <%- page.content %>
+    </div>
+    <% if(path!='about/index.html'){ %>
+    <div id="vcomments"></div>
+    <% } %>
+</div>
+
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'tvKlLbI84r2fvwfJfCXM3Him-gzGzoHsz',
+        appKey: 'pQt7B5oC98LGDyR2bAbQYdue',
+        placeholder: '分享你的看文感受',
+    })
+</script>
+<%- include("footer.ejs") %>
