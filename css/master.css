@@ -715,7 +715,7 @@ a:focus {
 }
 
 .v[data-class=v] .vcards .vcard .vh {
-    border-bottom: 1px solid #363636 !important;
+    border-bottom: none !important;
 }
 
 @media only screen and (max-width: 550px) {
