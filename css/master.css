@@ -714,6 +714,10 @@ a:focus {
     color: #f90 !important;
 }
 
+.v[data-class=v] .vcards .vcard .vh {
+    border-bottom: 1px solid #363636 !important;
+}
+
 @media only screen and (max-width: 550px) {
     #hotVideosSection {
         grid-template-columns: repeat(1, 1fr);
