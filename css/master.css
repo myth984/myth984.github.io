@@ -758,3 +758,21 @@ a:focus {
         height: 60px;
     }
 }
+
+table{
+    border-style: solid;
+    border-width: 2px;
+    border-color: #f90;
+    width: max-content;
+}
+tbody{
+    color:#dcdcdc;
+}
+thead{
+    font-size: 15px;
+    font-weight: normal;
+    color: #cbcbcb;
+}
+th,tr {
+    text-align: center;
+}

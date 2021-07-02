@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width = device-width,user-scalable = no, inital-scale = 1，maximum-scale = 1 minium-scal = 1">
+    <title>
+        
+                        Myth.icu |
+                        MySQL错行数据处理
+                            
+    </title>
+    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/image/favicon.png">
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+    <header>
+    <div id="headerWrapper">
+        <div id="headerContainer">
+            <div class="phoneMenu">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+            <div class="logo">
+                <a href="/">
+                    <img src="/image/logo.png">
+                </a>
+            </div>
+            <div id="search">
+
+                <input class="search-input" placeholder="搜索28个博客...">
+                <button class="search-btn">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="headerMenuContainer">
+        <div id="headerMainMenuInner">
+            <div id="headerCampaignDiv">
+                <ul id="headerMainMenu">
+                    <li class="menu">
+                        <a class="active js-topMenuLink" href="/">
+                            <span class="itemName">
+                                博客
+                                
+                            </span>
+
+
+                        </a>
+                    </li>
+                    <li class="menu">
+                        <a class="active js-topMenuLink" href="/friends">
+                            <span class="itemName">
+                                朋友
+                                
+                            </span>
+                        </a>
+                    </li>
+                    <li class="menu">
+                        <a class="active js-topMenuLink" href="/about">
+                            <span class="itemName">
+                                关于
+                                
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="phoneMenuPanel">
+        
+        <div class="phoneMenuItem"><a href="/">博客</a></div>
+        
+        
+        <div class="phoneMenuItem"><a href="/friends">朋友</a></div>
+        
+        
+        <div class="phoneMenuItem"><a href="/about">关于</a></div>
+        
+    </div>
+</header>
+<script src="/js/header.js"></script>
+<div class="post-container">
+    <div class="post-title">
+
+        
+        MySQL错行数据处理
+        
+    </div>
+    
+    <div class="post-date">
+        2021-07-02
+    </div>
+    
+
+    <div class="post-content">
+        <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>在公司很久了一直写的都出crud和一些前端的代码,终于有个机会让我接触到了业务方面的需求</p>
+<h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>想要计算一个股票组合的每日的涨跌幅</p>
+<p>比如股票组合中有(a,b,c)四只股票</p>
+<p>表中结构如下</p>
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th>交易日</th>
+<th>收盘价</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>a</td>
+<td>20210603</td>
+<td>10</td>
+</tr>
+<tr>
+<td>a</td>
+<td>20210602</td>
+<td>11</td>
+</tr>
+<tr>
+<td>a</td>
+<td>20210601</td>
+<td>12</td>
+</tr>
+<tr>
+<td>b</td>
+<td>20210603</td>
+<td>20</td>
+</tr>
+<tr>
+<td>b</td>
+<td>20210602</td>
+<td>22</td>
+</tr>
+<tr>
+<td>b</td>
+<td>20210601</td>
+<td>24</td>
+</tr>
+<tr>
+<td>c</td>
+<td>20210603</td>
+<td>15</td>
+</tr>
+<tr>
+<td>c</td>
+<td>20210602</td>
+<td>14</td>
+</tr>
+<tr>
+<td>c</td>
+<td>20210601</td>
+<td>10</td>
+</tr>
+</tbody></table>
+<p>单只股票的涨跌幅 = 今天收盘价 - 昨天收盘价 / 昨天收盘价 * 100%</p>
+<p>股票组合涨跌幅 = SUM(单只股票的涨跌幅 * 权重)</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>通过MySQL中的lead方法处理</p>
+<pre class="line-numbers language-MySQL"><code class="language-MySQL">SELECT
+  代码,
+  交易日,
+  收盘价
+  lead(收盘价,1) over (partition by 代码 order by 交易日 desc) as 前一日收盘价
+from
+table_name
+order by 交易日 desc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这样就是将结果错一行</p>
+<p>核心语句就是<code>lead(收盘价,1) over (partition by 代码 order by 交易日 desc)</code></p>
+<p>意为将下一行的<code>收盘价</code>以<code>代码</code>来划分以<code>交易日</code>为降序来展示<br>得到的结果为</p>
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th>交易日</th>
+<th>收盘价</th>
+<th>前一日收盘价</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>a</td>
+<td>20210603</td>
+<td>10</td>
+<td>11</td>
+</tr>
+<tr>
+<td>a</td>
+<td>20210602</td>
+<td>11</td>
+<td>12</td>
+</tr>
+<tr>
+<td>a</td>
+<td>20210601</td>
+<td>12</td>
+<td></td>
+</tr>
+<tr>
+<td>b</td>
+<td>20210603</td>
+<td>20</td>
+<td>22</td>
+</tr>
+<tr>
+<td>b</td>
+<td>20210602</td>
+<td>22</td>
+<td>24</td>
+</tr>
+<tr>
+<td>b</td>
+<td>20210601</td>
+<td>24</td>
+<td></td>
+</tr>
+<tr>
+<td>c</td>
+<td>20210603</td>
+<td>15</td>
+<td>14</td>
+</tr>
+<tr>
+<td>c</td>
+<td>20210602</td>
+<td>14</td>
+<td>10</td>
+</tr>
+<tr>
+<td>c</td>
+<td>20210601</td>
+<td>10</td>
+<td></td>
+</tr>
+</tbody></table>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+    </div>
+    
+    <div id="vcomments"></div>
+    
+</div>
+
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'tvKlLbI84r2fvwfJfCXM3Him-gzGzoHsz',
+        appKey: 'pQt7B5oC98LGDyR2bAbQYdue',
+        placeholder: '分享你的看文感受',
+    })
+</script>
+<footer>
+    <div class="footer-wrapper">
+        <div class="socialLink">
+            <a href="https://github.com/myth984/" target="_blank">
+                <i class="fa fa-github fa-2x" aria-hidden="true">
+                </i>
+            </a>
+        </div>
+        <div class="copyright">© Myth.icu, 2020</div>
+    </div>
+</footer>
+</body>
+</html>
