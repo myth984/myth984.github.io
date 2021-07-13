@@ -8,7 +8,7 @@
     <title>
         
                         Myth.icu |
-                        实习——艾漫数据
+                        JavaScript中数字格式化
                             
     </title>
     <link rel="stylesheet" href="/css/master.css">
@@ -90,24 +90,133 @@
     <div class="post-title">
 
         
-        实习——艾漫数据
+        JavaScript中数字格式化
         
     </div>
     
     <div class="post-date">
-        2019-07-17
+        2021-07-13
     </div>
     
 
     <div class="post-content">
-        <p>经过一星期的面试，从五家公司发来的offer中选择了艾漫数据。在北京也算基本稳定了。</p>
-<h2 id="面试"><a href="#面试" class="headerlink" title="面试"></a>面试</h2><p>别家公司面试都问一些项目经验，spring、sql问题，不是特别注重基础。</p>
-<p>这家公司也同样问了我简历上写的爬取学生信息项目的细节，毕竟自己亲力亲为完成，添油加醋、言过其实的描述了一遍。</p>
-<p>问了我mysql 的全连接，好巧不巧我从来没学过mysql的全连接，连一些基础的连接我都熟悉，但是昨天晚上我鬼使神差的看了一个30分钟的关于mysql多表查询的视频，记住了mysql没有全连接，通过union进行连接左连接和右连接。</p>
-<p>问了我第三方http包都有什么，幸好我经常网上抄人代码，知道httpclint和okhttp，真的是幸运也是实力的一部分。</p>
-<p>问了我java中的基本类型，不过我少说了boolean，但看起来面试官也没发现，哈哈哈，问我String是不是基本类型，我已经对java这些基础类型了如指掌，我装逼的说String在之前版本是用char[]实现 在java8中改用byte[]实现。哈哈哈哈哈哈哈哈哈装了一手好逼。</p>
-<h2 id="自身发展"><a href="#自身发展" class="headerlink" title="自身发展"></a>自身发展</h2><p>做了爬虫实习生，考虑过以后一直做爬虫的问题，我怕python这么强会取代java的位置，但是和付金泉小哥讨论过这个问题，这个还算不上问题。还有就是怕以后把Spring什么的忘记了，做不了别的，所以我决定不能忘掉Spring的同时还要了解一下python的语法。</p>
-<h3 id="努力努力，加油加油。"><a href="#努力努力，加油加油。" class="headerlink" title="努力努力，加油加油。"></a>努力努力，加油加油。</h3><script>
+        <h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>需要在前端页面中将某些数字</p>
+<ul>
+<li>用千分位形式展示</li>
+<li>保留n位小数,不足补零</li>
+</ul>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>发现 <a target="_blank" rel="noopener" href="http://numeraljs.com/">numeraljs</a> 这个包整好可以解决我的问题</p>
+<p>于是<code>npm install numeral</code></p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">import</span> numeral <span class="token keyword">from</span> <span class="token string">"numeral"</span> 
+<span class="token comment" spellcheck="true">// 千分位标识 '1,000'</span>
+<span class="token function">numeral</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'0,0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 千分位标识并保留四位小数 '10,000.0000'</span>
+<span class="token function">numeral</span><span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'0,0.0000'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="更多用法"><a href="#更多用法" class="headerlink" title="更多用法"></a>更多用法</h2><table>
+<thead>
+<tr>
+<th>数字</th>
+<th>格式化</th>
+<th>输出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>10000</td>
+<td>‘0,0.0000’</td>
+<td>10,000.0000</td>
+</tr>
+<tr>
+<td>10000.23</td>
+<td>‘0,0’</td>
+<td>10,000</td>
+</tr>
+<tr>
+<td>10000.23</td>
+<td>‘+0,0’</td>
+<td>+10,000</td>
+</tr>
+<tr>
+<td>-10000</td>
+<td>‘0,0.0’</td>
+<td>-10,000.0</td>
+</tr>
+<tr>
+<td>10000.1234</td>
+<td>‘0.000’</td>
+<td>10000.123</td>
+</tr>
+<tr>
+<td>100.1234</td>
+<td>‘00000’</td>
+<td>00100</td>
+</tr>
+<tr>
+<td>1000.1234</td>
+<td>‘000000,0’</td>
+<td>001,000</td>
+</tr>
+<tr>
+<td>10</td>
+<td>‘000.00’</td>
+<td>010.00</td>
+</tr>
+<tr>
+<td>10000.1234</td>
+<td>‘0[.]00000’</td>
+<td>10000.12340</td>
+</tr>
+<tr>
+<td>-10000</td>
+<td>‘(0,0.0000)’</td>
+<td>(10,000.0000)</td>
+</tr>
+<tr>
+<td>-0.23</td>
+<td>‘.00’</td>
+<td>-.23</td>
+</tr>
+<tr>
+<td>-0.23</td>
+<td>‘(.00)’</td>
+<td>(.23)</td>
+</tr>
+<tr>
+<td>0.23</td>
+<td>‘0.00000’</td>
+<td>0.23000</td>
+</tr>
+<tr>
+<td>0.23</td>
+<td>‘0.0[0000]’</td>
+<td>0.23</td>
+</tr>
+<tr>
+<td>1230974</td>
+<td>‘0.0a’</td>
+<td>1.2m</td>
+</tr>
+<tr>
+<td>1460</td>
+<td>‘0 a’</td>
+<td>1 k</td>
+</tr>
+<tr>
+<td>-104000</td>
+<td>‘0a’</td>
+<td>-104k</td>
+</tr>
+<tr>
+<td>1</td>
+<td>‘0o’</td>
+<td>1st</td>
+</tr>
+<tr>
+<td>100</td>
+<td>‘0o’</td>
+<td>100th</td>
+</tr>
+</tbody></table>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
