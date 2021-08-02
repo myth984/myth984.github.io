@@ -8,7 +8,7 @@
     <title>
         
                         Myth.icu |
-                        JavaScript中数字格式化
+                        MySQL data free与optimize
                             
     </title>
     <link rel="stylesheet" href="/css/master.css">
@@ -90,132 +90,29 @@
     <div class="post-title">
 
         
-        JavaScript中数字格式化
+        MySQL data free与optimize
         
     </div>
     
     <div class="post-date">
-        2021-07-13
+        2021-08-02
     </div>
     
 
     <div class="post-content">
-        <h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>需要在前端页面中将某些数字</p>
-<ul>
-<li>用千分位形式展示</li>
-<li>保留n位小数,不足补零</li>
-</ul>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>发现 <a target="_blank" rel="noopener" href="http://numeraljs.com/">numeraljs</a> 这个包整好可以解决我的问题</p>
-<p>于是<code>npm install numeral</code></p>
-<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">import</span> numeral <span class="token keyword">from</span> <span class="token string">"numeral"</span> 
-<span class="token comment" spellcheck="true">// 千分位标识 '1,000'</span>
-<span class="token function">numeral</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'0,0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 千分位标识并保留四位小数 '10,000.0000'</span>
-<span class="token function">numeral</span><span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'0,0.0000'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="更多用法"><a href="#更多用法" class="headerlink" title="更多用法"></a>更多用法</h2><table>
-<thead>
-<tr>
-<th>数字</th>
-<th>格式化</th>
-<th>输出</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>10000</td>
-<td>‘0,0.0000’</td>
-<td>10,000.0000</td>
-</tr>
-<tr>
-<td>10000.23</td>
-<td>‘0,0’</td>
-<td>10,000</td>
-</tr>
-<tr>
-<td>10000.23</td>
-<td>‘+0,0’</td>
-<td>+10,000</td>
-</tr>
-<tr>
-<td>-10000</td>
-<td>‘0,0.0’</td>
-<td>-10,000.0</td>
-</tr>
-<tr>
-<td>10000.1234</td>
-<td>‘0.000’</td>
-<td>10000.123</td>
-</tr>
-<tr>
-<td>100.1234</td>
-<td>‘00000’</td>
-<td>00100</td>
-</tr>
-<tr>
-<td>1000.1234</td>
-<td>‘000000,0’</td>
-<td>001,000</td>
-</tr>
-<tr>
-<td>10</td>
-<td>‘000.00’</td>
-<td>010.00</td>
-</tr>
-<tr>
-<td>10000.1234</td>
-<td>‘0[.]00000’</td>
-<td>10000.12340</td>
-</tr>
-<tr>
-<td>-10000</td>
-<td>‘(0,0.0000)’</td>
-<td>(10,000.0000)</td>
-</tr>
-<tr>
-<td>-0.23</td>
-<td>‘.00’</td>
-<td>-.23</td>
-</tr>
-<tr>
-<td>-0.23</td>
-<td>‘(.00)’</td>
-<td>(.23)</td>
-</tr>
-<tr>
-<td>0.23</td>
-<td>‘0.00000’</td>
-<td>0.23000</td>
-</tr>
-<tr>
-<td>0.23</td>
-<td>‘0.0[0000]’</td>
-<td>0.23</td>
-</tr>
-<tr>
-<td>1230974</td>
-<td>‘0.0a’</td>
-<td>1.2m</td>
-</tr>
-<tr>
-<td>1460</td>
-<td>‘0 a’</td>
-<td>1 k</td>
-</tr>
-<tr>
-<td>-104000</td>
-<td>‘0a’</td>
-<td>-104k</td>
-</tr>
-<tr>
-<td>1</td>
-<td>‘0o’</td>
-<td>1st</td>
-</tr>
-<tr>
-<td>100</td>
-<td>‘0o’</td>
-<td>100th</td>
-</tr>
-</tbody></table>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>公司的MySQL服务报警了占用超过了90% 所以找到一下是哪些表过大导致的</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ol>
+<li>先删除了一些无用的备份表</li>
+<li>删了一些表中的记录 如三个月之前的日志记录</li>
+<li>清理一下无用的索引</li>
+</ol>
+<h2 id="发现问题"><a href="#发现问题" class="headerlink" title="发现问题"></a>发现问题</h2><p>再清理某个日志表时 发现删除记录后表并没有变小 查询原因</p>
+<p>因为我们表使用的是<code>InnoDB</code>引擎</p>
+<blockquote>
+<p>InnoDB表空间在插入数据时会增长,但删除数据时文件不会缩小.因此,例如,如果您插入100万行,然后删除它们,该文件将有很多物理分配的空间,但不再使用.如果可以再次增加表空间文件,InnoDB将重新使用该空间.<br>此外,即使您不删除,也可能存在一些“浪费”的空间,因为当表空间文件的大小增加时,它们会被一大块页面扩展,这些页面由配置选项innodb_autoextend_increment(以兆字节为单位)决定.在这些页面被数据填充之前,它们是可用空间.<br>InnoDB报告的Data_free是中心表空间文件中空页“浪费”的空间量.它与NULL值无关,它与没有行的数据页有关.<br>Data_free仅报告完全空的扩展区留下的空间(扩展区是一个等于1MB的页面块).您会注意到data_free始终是1MB的倍数.较小的空闲页面块不计入data_free,也不计算部分填充的页面.所以“浪费”的空间可能要大得多,但我们无从知晓.</p>
+</blockquote>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><pre class="line-numbers language-SQL"><code class="language-SQL">optimeze table `table_name`<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>由于命令optimize会进行锁表操作，所以进行优化时要避开表数据操作时间，避免影响正常业务的进行。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
