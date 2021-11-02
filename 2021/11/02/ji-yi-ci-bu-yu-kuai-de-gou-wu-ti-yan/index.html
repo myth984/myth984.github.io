@@ -8,7 +8,7 @@
     <title>
         
                         Myth.icu |
-                        MySQL data free与optimize
+                        记一次不愉快的购物体验
                             
     </title>
     <link rel="stylesheet" href="/css/master.css">
@@ -90,29 +90,27 @@
     <div class="post-title">
 
         
-        MySQL data free与optimize
+        记一次不愉快的购物体验
         
     </div>
     
     <div class="post-date">
-        2021-08-02
+        2021-11-02
     </div>
     
 
     <div class="post-content">
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>公司的MySQL服务报警了占用超过了90% 所以找到一下是哪些表过大导致的</p>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ol>
-<li>先删除了一些无用的备份表</li>
-<li>删了一些表中的记录 如三个月之前的日志记录</li>
-<li>清理一下无用的索引</li>
-</ol>
-<h2 id="发现问题"><a href="#发现问题" class="headerlink" title="发现问题"></a>发现问题</h2><p>再清理某个日志表时 发现删除记录后表并没有变小 查询原因</p>
-<p>因为我们表使用的是<code>InnoDB</code>引擎</p>
-<blockquote>
-<p>InnoDB表空间在插入数据时会增长,但删除数据时文件不会缩小.因此,例如,如果您插入100万行,然后删除它们,该文件将有很多物理分配的空间,但不再使用.如果可以再次增加表空间文件,InnoDB将重新使用该空间.<br>此外,即使您不删除,也可能存在一些“浪费”的空间,因为当表空间文件的大小增加时,它们会被一大块页面扩展,这些页面由配置选项innodb_autoextend_increment(以兆字节为单位)决定.在这些页面被数据填充之前,它们是可用空间.<br>InnoDB报告的Data_free是中心表空间文件中空页“浪费”的空间量.它与NULL值无关,它与没有行的数据页有关.<br>Data_free仅报告完全空的扩展区留下的空间(扩展区是一个等于1MB的页面块).您会注意到data_free始终是1MB的倍数.较小的空闲页面块不计入data_free,也不计算部分填充的页面.所以“浪费”的空间可能要大得多,但我们无从知晓.</p>
-</blockquote>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><pre class="line-numbers language-SQL"><code class="language-SQL">optimeze table `table_name`<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>由于命令optimize会进行锁表操作，所以进行优化时要避开表数据操作时间，避免影响正常业务的进行。</p>
+        <h2 id="2021年10月15日"><a href="#2021年10月15日" class="headerlink" title="2021年10月15日"></a>2021年10月15日</h2><p>女朋友过生日,不知送什么生日礼物,苦思冥想,求助亲朋好友,决定送一条项链</p>
+<p>辗转反侧,夜不能寐,选择了潘多拉金色飞贼项链.这条项链带链子一千多,只要吊坠不到500,遂只买了吊坠.</p>
+<h2 id="2021年10月19日"><a href="#2021年10月19日" class="headerlink" title="2021年10月19日"></a>2021年10月19日</h2><p>又考虑女朋友手洗内衣确实很辛苦,遂在 <em>淘宝-苏宁易购-OIDIRE</em> 买了一个小型洗衣机专门用来洗内衣.</p>
+<h2 id="2021年10月21日"><a href="#2021年10月21日" class="headerlink" title="2021年10月21日"></a>2021年10月21日</h2><p>只有项链到了,洗衣机需要过几日才能到</p>
+<h2 id="2021年10月22日"><a href="#2021年10月22日" class="headerlink" title="2021年10月22日"></a>2021年10月22日</h2><p>洗衣机到了,主观来讲很垃圾,5V2A USB供电,很怀疑放入衣服后根本穿不起来,于是打算退货退款,再买一个别的品牌</p>
+<h2 id="2021年10月23日"><a href="#2021年10月23日" class="headerlink" title="2021年10月23日"></a>2021年10月23日</h2><p>使用<code>圆通速递+</code>微信小程序联系小哥上门,根据卖家提供的地址退货,在淘宝填写单号,淘宝给了我极速退款</p>
+<h2 id="2021年10月25日"><a href="#2021年10月25日" class="headerlink" title="2021年10月25日"></a>2021年10月25日</h2><p>查看物流快递,商家已经收到货了,<code>仓库代收</code> 并没有继续关注</p>
+<h2 id="2021年11月2日"><a href="#2021年11月2日" class="headerlink" title="2021年11月2日"></a>2021年11月2日</h2><p>正在敲码,收到淘宝短信<em>商家拒绝了我的退款请求……</em></p>
+<p>我打开淘宝,查看具体什么情况,商家给出的理由<code>未收到货</code></p>
+<p>于是找客服了解情况,<code>淘宝客服 -&gt; 苏宁客服 -&gt; 厂家客服 -&gt; 厂家售后客服</code> 经过淘宝客服的层层转接终于找到了可以对话的客服.</p>
+<p>我将我的情况如实反映,客服告知我已经登记请耐心等待.</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
