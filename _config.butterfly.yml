@@ -260,7 +260,7 @@ addtoany:
 comments:
   # Up to two comments system, the first will be shown as default
   # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo
-  use: Valine
+  use:
   # - Valine
   # - Disqus
   text: true # Display the comment name next to the button
@@ -314,8 +314,8 @@ valine:
   appId: tvKlLbI84r2fvwfJfCXM3Him-gzGzoHsz
   appKey: pQt7B5oC98LGDyR2bAbQYdue
   pageSize: 5
-  avatar: monsterid # gravatar style https://valine.js.org/#/avatar
-  lang: zh # i18n: zh-CN/zh-TW/en/ja
+  avatar: '' # gravatar style https://valine.js.org/#/avatar
+  lang: zh-CN # i18n: zh-CN/zh-TW/en/ja
   placeholder: 分享你的看文感受 # valine comment input placeholder (like: Please leave your footprints)
   guest_info: nick,mail,link # valine comment header info (nick/mail/link)
   recordIP: false # Record reviewer IP
