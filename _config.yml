@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Myth.icu
+title: Myth
 subtitle: ''
 description: 'Myth的博客'
-keywords: 'myth,blog'
+keywords: 'myth,blog,myth984'
 author: Myth
-language: zh
+language: zh-CN
 timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: http://example.com
+url: https://myth.icu
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -105,7 +105,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: myth
+theme: butterfly
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
