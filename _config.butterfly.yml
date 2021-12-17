@@ -94,7 +94,7 @@ disable_top_img: false
 index_img:
 
 # If the banner of page not setting, it will show the top_img
-default_top_img: https://api.dujin.org/bing/1920.php
+default_top_img: https://bing.ioliu.cn/v1/rand
 
 # The banner image of archive page
 archive_img:
@@ -574,7 +574,7 @@ ClickShowText:
 
 # Default display mode (網站默認的顯示模式)
 # light (default) / dark
-display_mode: dark
+display_mode: light
 
 # Beautify (美化頁面顯示)
 beautify:
