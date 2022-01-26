@@ -24,6 +24,4 @@ author.job = ENGINEER.SOFT.ALL
 
 ### 部署在[GitHub Page](https://pages.github.com/)
 
-### 主题自己开发 模仿[Pornhub](https://pornhub.com/)
-
-
+~~### 主题自己开发 模仿[Pornhub](https://pornhub.com/)~~
