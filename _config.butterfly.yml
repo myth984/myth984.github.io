@@ -94,7 +94,7 @@ disable_top_img: false
 index_img:
 
 # If the banner of page not setting, it will show the top_img
-default_top_img: https://bing.ioliu.cn/v1/rand
+default_top_img: https://api.ixiaowai.cn/gqapi/gqapi.php
 
 # The banner image of archive page
 archive_img:
