@@ -1,342 +1,1218 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Myth</title><meta name="keywords" content="myth,blog,myth984"><meta name="author" content="Myth"><meta name="copyright" content="Myth"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Myth的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Myth">
-<meta property="og:url" content="https://myth.icu/page/3/index.html">
-<meta property="og:site_name" content="Myth">
-<meta property="og:description" content="Myth的博客">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://q2.qlogo.cn/headimg_dl?dst_uin=1193322118&spec=4">
-<meta property="article:author" content="Myth">
-<meta property="article:tag" content="myth,blog,myth984">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://q2.qlogo.cn/headimg_dl?dst_uin=1193322118&spec=4"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://myth.icu/page/3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/Myth" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: undefined,
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  date_suffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  lightbox: 'fancybox',
-  Snackbar: undefined,
-  source: {
-    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
-    },
-    fancybox: {
-      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
-    }
-  },
-  isPhotoFigcaption: false,
-  islazyload: false,
-  isanchor: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'Myth',
-  isPost: false,
-  isHome: true,
-  isHighlightShrink: false,
-  isToc: false,
-  postUpdate: '2024-01-03 14:02:15'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
+<!DOCTYPE html>
+<html lang="zh">
 
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
-        }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
-
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
-
-        if (!itemStr) {
-          return undefined
-        }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
-
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return item.value
-      }
-    }
-  
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
-  
-      win.activateDarkMode = function () {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = function () {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width = device-width,user-scalable = no, inital-scale = 1，maximum-scale = 1 minium-scal = 1">
+    <title>
         
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
-    
-    const detectApple = () => {
-      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-    })(window)</script><meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://q2.qlogo.cn/headimg_dl?dst_uin=1193322118&amp;spec=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/friends/"><i class="fa-fw fas fa-link"></i><span> 友联</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://api.ixiaowai.cn/gqapi/gqapi.php')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Myth</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/friends/"><i class="fa-fw fas fa-link"></i><span> 友联</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Myth</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/10/26/shu-mei-pai-lamp-da-jian-ke-dao-yun-deng-yi-xie-lie-pei-zhi/" title="树莓派LAMP搭建可道云等一些列配置">树莓派LAMP搭建可道云等一些列配置</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-10-26T02:49:37.000Z" title="发表于 2019-10-26 10:49:37">2019-10-26</time></span></div><div class="content">在已经烧录完系统的情况下，再进行以下操作
-更换apt源进入清华大学镜像站 根据系统版本选择对应的镜像源，一定要选对了 不然会有很多后续问题
-sudo vi /etc/apt/sources.list
-sudo apt-get update
-安装apachesudo apt-get apache2
-没有特殊要求的话 就不用改配置文件 对应的目录为 /var/www/html
-此时在浏览器中输入http://ip 如果可以访问到网页就是成功了
-安装mysqlsudo apt-get install maridb 我也不清楚为什么Mysql 安装不了maridb和mysql一样用
-如果镜像源配置错 很可能安装不上
-sudo mysql
-进入mysql中则安装成功
-安装php安装php网上有很多教程，我都尝试了一下，没有能用的，我逐渐摸索找到了能用的方法
- sudo apt-get install  php7.1 php7.1-curl php7.1-mbstring php7.1-gd
-下载可道云可道云选择版本
-复制下载链接
-wget 下载链接
-mv 下载到的地址 /var/www/html ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/10/15/zhen-dui-sha-bi-lao-shi-de-jie-jue-fang-an/" title="针对傻逼老师的解决方案">针对傻逼老师的解决方案</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-10-15T07:12:07.000Z" title="发表于 2019-10-15 15:12:07">2019-10-15</time></span></div><div class="content">脏话我们的傻逼教授留了傻逼作业
-傻逼的原因是因为让我做一个可以微信登录的网页
-他妈的，注册微信开放平台需要企业资格，我们问他怎么办，
-他说：问自己公司借
-我：？？？？？？？？？
-我可cnm吧
-技术本想注册qq互联 用qq登录替代微信登录，结果qq登录审核一直有问题
-苦思冥想好几天毫无进展
-今天突然灵光乍现，我有一个微信公众号，可不可以用微信公众号的生成带二维码实现这个功能
-我把整体流程考虑清楚后，刚准备做 他妈的！个人订阅号没有生成带参数的二维码的权限
-满脑子cnm
-于是转变思路：
+                        Myth.icu |
+                        
+                            
+    </title>
+    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/image/favicon.png">
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<meta name="generator" content="Hexo 5.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
-用户打开网页
+<body>
+    <header>
+    <div id="headerWrapper">
+        <div id="headerContainer">
+            <div class="phoneMenu">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+            <div class="logo">
+                <a href="/">
+                    <img src="/image/logo.png">
+                </a>
+            </div>
+            <div id="search">
 
-网页显示随机验证码
-
-微信扫码关注公众号
-
-用户发送验证码给公众号
-
-公众号收到验证码向后台服务器发出参数为验证码的请求
-
-后台服务器验证该二维码 和 随机生成的二维码 是否相同
-
-用户浏览器不断ajax访问
-
-直到后台服务器验证码对比成功
-
-跳入主页
+                <input class="search-input" placeholder="搜索39个博客...">
+                <button class="search-btn">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="headerMenuContainer">
+        <div id="headerMainMenuInner">
+            <div id="headerCampaignDiv">
+                <ul id="headerMainMenu">
+                    <li class="menu">
+                        <a class="active js-topMenuLink" href="/">
+                            <span class="itemName">
+                                博客
+                                
+                            </span>
 
 
-可是他妈的  我没有根据openId获取用户信息的权限
-操 openId有实效性不能做为用户标识
-自杀
-
-        document.querySelectorAll('.github-emoji')
-          .for ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/09/20/ji-yu-springboot-de-ji-zhang-xi-tong/" title="基于springboot的记账系统">基于springboot的记账系统</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-09-20T06:43:15.000Z" title="发表于 2019-09-20 14:43:15">2019-09-20</time></span></div><div class="content">七月初来的北京，对自己的花销一直没有具体记录，全都靠人脑记录
-很久之前就有这个记账系统的想法，九月初开始使用至今快一个月，还算满足了自己的需求
-技术前端：
-
-layui的数据表格作为展示详情信息
-
-chartjs用于展示饼状图折线图
-
-
-后端:
-
-简单的springboot处理请求
-
-数据库:
-
-饼状图: where type = “支出” order by time desc  group by tag
-
-折线图:
-
-因为考虑到即使今天没有花销也要在图表中对应的日期显示为0，而不是空。
-网上其他人的解决方案是通过mysql建立临时表，然后 group by 天 进行对比查询.
-我的解决方案是放到java中 新建一个 长度为当前月份的天数 的数组 new double[nowMonth.datCount].
-将mysql发送来的数据 group by 天 一次插入对应下标-1。
-如第一天的花销为 arr[0],第十天的花销为 arr[9],第n天为 arr[n-1]。
-利用java中double数组元素默认为0，解决了这个问题。
-
-
-
-
-        document.querySe ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/09/09/windows-wu-xian-kong-zhi-n-ge-an-zhuo-shou-ji/" title="windows无线控制n个安卓手机">windows无线控制n个安卓手机</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-09-09T09:53:59.000Z" title="发表于 2019-09-09 17:53:59">2019-09-09</time></span></div><div class="content">起因公司有6台手机再跑微信公众号的数据，但是不是特别稳定，偶尔会出现一些需要人为干预才能解决的错误。
-方案配置adb环境：下载地址：https://developer.android.com/studio/releases/platform-tools.html
-
-解压至任意目录，复制改目录
-
-此电脑-右键-属性-高级系统设置-环境变量-系统变量-PATH-编辑-新建-粘贴刚刚复制的路径
-
-打开cmd 输入 adb version 出现版本信息即配置成功
-下载scrcpy:
-下载地址：https://github.com/Genymobile/scrcpy
-
-有线连接：
-
-usb连接手机
-
-双击scrcpy.exe
-
-
-
-无线连接：
-
-usb连接手机,打开usb调试
-
-打开cmd
-
-输入adb tcpip 12000 (任意未被占用端口号)
-
-拔出手机
-
-输入adb connect ip:12000 (手机ip可以通过 adb shell ifconfig wlan0查看 或其他方式)
-
-scrcpy.exe
-
-
-
-多台手机无线连接：
-
-先插入第一台手机
-
-adb devices 查看 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/08/27/guan-yu-ba-yue/" title="关于八月">关于八月</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-08-27T03:04:00.000Z" title="发表于 2019-08-27 11:04:00">2019-08-27</time></span></div><div class="content">在北京快两个月时间了，还过得去，没想的那么苦，也没家里和上学那么快乐。唯一的区别就是更自由了些。
-工作领导对我很不错，每天上下班时间长了点剩下没什么可调的。这一阵的工作我掌握了 北京周一会堵车的道理，每次周一上班我都要祈祷不要堵车。
-今天又堵车了，因为十字路口的红灯一直是红的，等了10多分钟都没有变化。于是我和司机提出下车，很多车上和我一样的打工仔都下了车，不同的是他们都骑自行车走了。我本来不太敢骑的，看大家都骑，我犹豫了一会也骑了青桔单车。
-前一阵用一周修复了一个bug，因为这个bug学到了好多东西，挺好的。事情是这样的，我们公司的有一个和优酷合作的项目，爬取各大 小说网站的信息。有两套主程序，一套叫小说增量，用于爬取书入库Mysql的，另外一套是从mysql中读取书的url，每天爬取书的热度，点击数，鲜花什么的。我入职到现在都在一直陆陆续续改增量，但是我发现 跑热度的程序并没有读取到增量。这个我找了好久，原来是数据的id是int类型最大值为2147483648，满了，所以增量跑完了也不会被热度拿到，于是我便把整个项目的int都改为long、bigint了。其实我们实际数据并没有那么 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/08/05/ji-shang-ban-di-yi-ci-chi-dao/" title="记上班第一次迟到">记上班第一次迟到</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-08-05T07:45:23.000Z" title="发表于 2019-08-05 15:45:23">2019-08-05</time></span></div><div class="content">凌晨下了很大的雨，虽然早上不下了，但是出发的时候也把伞带上了，这把伞是我前一阵子被浇成落汤鸡之后在711花39元买的。
-8:06 每日熟悉的路线 196转403，看见403站台口已经聚集很多和我一样上班赚钱的人，据我多年坐公交分析下一班车应该快来了，公交站台人越多说明上一趟公交离开的时间越长。
-8:20 事与愿违，正常情况下公交车已经来了，但是现在还没有，我和等车的人一样都有些着急了，因为上班迟到焦虑。天也不随人愿，又下雨了。
-8:30 终于遥遥望见姗姗来迟的403，目光迎接到站台，却听见司机对着我们喊“只到大山子路口东”，我要坐到终点站，大山子路口东是前两站，肯定不行。有三两个乘客上车了，站台上的我们更着急了。
-8：48 目送一辆辆其他路线汽车远去，终于盼来了403，车一进站，心一嘚瑟。从前403人非常少，如果没有早起的大爷大妈，我常常能混到座位。今天的403人满为患，和下班坐的14号线有一拼。我赶紧上前了两步，生怕上不去车，靠着后方乘客的努力，我也成功长了车。
-9:10 403线路我从前从未遇到堵车，屋漏偏逢十级大暴雨，大家都不焦虑铁定迟到了，安安心心等吧。听司机和乘客聊天知道了， ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/07/24/ji-xiu-fu-di-yi-ge-bug/" title="记修复第一个Bug">记修复第一个Bug</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-07-24T01:19:29.000Z" title="发表于 2019-07-24 09:19:29">2019-07-24</time></span></div><div class="content">入职四天，第一次接触公司项目，有些收货记录下来
-领导让我查为什么头条爬虫最近记日数据量下来了，每个时间段从几百kb掉到了几k。
-第一次改bug，毫无头绪无从下手。打算先从代码逻辑下手，看了一会代码逻辑，和略略几笔的开发文档，找到了日志的位置。但是没有日志系统复杂，整体运行日志，模块运行日志，mysql运行记录。找了很久没有线索。
-然后，我寻找前些日子数据正常的错误日志和最近错误日志的对比，一路摸索发现头条文章页面改版，导致数据量降低，我根据新的html写了一套新的爬取模板，用了任务链模式添加了我的版本，同时也不废除曾经的解析模板。
-弄完这些差不多要下班了，和领导一起上线跟了一会日志到7点坐上最后一套公交回家。
-今早一看，数据正常，没有问题。
-
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/07/17/shi-xi-ai-man-shu-ju/" title="实习——艾漫数据">实习——艾漫数据</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-07-17T08:33:54.000Z" title="发表于 2019-07-17 16:33:54">2019-07-17</time></span></div><div class="content">经过一星期的面试，从五家公司发来的offer中选择了艾漫数据。在北京也算基本稳定了。
-面试别家公司面试都问一些项目经验，spring、sql问题，不是特别注重基础。
-这家公司也同样问了我简历上写的爬取学生信息项目的细节，毕竟自己亲力亲为完成，添油加醋、言过其实的描述了一遍。
-问了我mysql 的全连接，好巧不巧我从来没学过mysql的全连接，连一些基础的连接我都熟悉，但是昨天晚上我鬼使神差的看了一个30分钟的关于mysql多表查询的视频，记住了mysql没有全连接，通过union进行连接左连接和右连接。
-问了我第三方http包都有什么，幸好我经常网上抄人代码，知道httpclint和okhttp，真的是幸运也是实力的一部分。
-问了我java中的基本类型，不过我少说了boolean，但看起来面试官也没发现，哈哈哈，问我String是不是基本类型，我已经对java这些基础类型了如指掌，我装逼的说String在之前版本是用char[]实现 在java8中改用byte[]实现。哈哈哈哈哈哈哈哈哈装了一手好逼。
-自身发展做了爬虫实习生，考虑过以后一直做爬虫的问题，我怕python这么强会取代ja ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/07/04/zai-xue-xiao-de-zui-hou-ji-tian/" title="在学校的最后几天">在学校的最后几天</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-07-04T06:57:17.000Z" title="发表于 2019-07-04 14:57:17">2019-07-04</time></span></div><div class="content">说些只有晚上睡不着的时候才能说出的话。三年也太快了，刚入学的时候知道大学时光会很快，真的没想到会这么快，快到还记得清刚进入校门的心情，以前怎么就没好好的看看这里的风景呢。
-说起学校没有感恩，没有抱怨。还是想说一句，我们学校真的是好手段啊，入学时说的是在校三年，大四安排&lt;实训&gt;，乍一听以为是实习，那时也稀里糊涂。如今才知道实训不等于实习，实训就是培训。文字游戏吗，说不上，只能怪自己高中没有努力，怨不得别的什么。
-或者明天，或者后天就要迈向真正独立的第一步了，前往北京开始披荆斩棘的新征程。可能北京也没我想的那么难，可能也没我想的那么简单。不论怎样该来的总要来，该去的总要去。有些膨胀的想法，我现在的技术如果都混不下去的话，我的那些同学们，不知道会在哪里要饭。说出来还是觉得不妥，人各有命，我也应该内敛一些，初入江湖如此不知深浅，定会被笑话井底之蛙。我可能真的就是井底之蛙呢，学校是井，我们都是蛙，我觉得我可能是为数不多的牛蛙哈哈哈哈哈哈，因为牛啊。
-这些天真的是每天都睡的很晚，都在身临其境的幻想面试，入职。身临其境到有时都会紧张到手心流汗，不知道将会怎样，是一路顺风顺水，还是饱经风霜 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/06/24/ji-yu-springboot-de-shuang-pin-zai-xian-lian-xi/" title="基于springboot的双拼在线练习">基于springboot的双拼在线练习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-06-24T09:15:14.000Z" title="发表于 2019-06-24 17:15:14">2019-06-24</time></span></div><div class="content">起因前一阵买了个键盘吗，进了售后群，看见再说双拼，于是便了解了下双拼。
-什么是双拼双拼输入法，将汉字拼音的声、韵母各用一个英文字母表示，也就是说打一个汉字，只要按2下键盘就可以了。目前主流的双拼方案包括小鹤双拼、微软拼音2003、智能ABC、拼音加加、紫光双拼、自然码等方案。这些方案的主要区别在于韵母的键位安排和辅助码。
-需求对双拼非常感兴趣，于是便有了写一个用于练习的网站来提升自己的打字速度。
-技术spingboot+mybatis+mysql+html+jquery+thymeleaf
-关键实现用pinyin4j将汉字转换为拼音，将键盘输入的两个字母转为对应的声母韵母组合成的拼音，进行比较。
-细节前端输入两个字符时，发出请求，后端响应将字符拆解为声母韵母与对应汉字进行比较。正确则输入下一字符，错误则进入错字库，错的次数越多，权重越大。
-项目地址http://doublespell.myth9.cn
-Github
-
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-        ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/page/4/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://q2.qlogo.cn/headimg_dl?dst_uin=1193322118&amp;spec=4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Myth</div><div class="author-info__description">Myth的博客</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/myth984"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/03/2023-nian-du-zong-jie/" title="2023年度总结">2023年度总结</a><time datetime="2024-01-03T03:19:33.000Z" title="发表于 2024-01-03 11:19:33">2024-01-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/12/mysql-bi-jiao-liang-ge-ke-neng-wei-null-de-zhi/" title="mysql比较两个可能为null的值">mysql比较两个可能为null的值</a><time datetime="2023-04-12T03:12:28.000Z" title="发表于 2023-04-12 11:12:28">2023-04-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/02/10/ji-yi-jian-gao-zhong-qu-shi/" title="记一件高中趣事">记一件高中趣事</a><time datetime="2023-02-10T09:23:17.000Z" title="发表于 2023-02-10 17:23:17">2023-02-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/10/27/cai-yuan/" title="裁员">裁员</a><time datetime="2022-10-27T02:50:24.000Z" title="发表于 2022-10-27 10:50:24">2022-10-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/10/21/ji-lu-ji-ge-jie-ma-ping-tai/" title="记录几个接码平台">记录几个接码平台</a><time datetime="2022-10-21T09:16:17.000Z" title="发表于 2022-10-21 17:16:17">2022-10-21</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
-    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">2024年01月</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">2023年04月</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/02/"><span class="card-archive-list-date">2023年02月</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/10/"><span class="card-archive-list-date">2022年10月</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/05/"><span class="card-archive-list-date">2022年05月</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">2022年01月</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/12/"><span class="card-archive-list-date">2021年12月</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">2021年11月</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">39</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-01-03T06:02:15.448Z"></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://api.ixiaowai.cn/gqapi/gqapi.php')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Myth</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script>var preloader = {
-  endLoading: () => {
-    document.body.style.overflow = 'auto';
-    document.getElementById('loading-box').classList.add("loaded")
-  },
-  initLoading: () => {
-    document.body.style.overflow = '';
-    document.getElementById('loading-box').classList.remove("loaded")
-
-  }
-}
-window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function subtitleType () {
-  if (true) { 
-    var typed = new Typed("#subtitle", {
-      strings: "人民有信仰，民族有希望，国家有力量".split(","),
-      startDelay: 300,
-      typeSpeed: 150,
-      loop: false,
-      backSpeed: 50
-    })
-  } else {
-    document.getElementById("subtitle").innerHTML = '人'
-  }
-}
-
-if (true) {
-  if (typeof Typed === 'function') {
-    subtitleType()
-  } else {
-    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
-  }
-} else {
-  subtitleType()
-}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+                        </a>
+                    </li>
+                    <li class="menu">
+                        <a class="active js-topMenuLink" href="/friends">
+                            <span class="itemName">
+                                朋友
+                                
+                            </span>
+                        </a>
+                    </li>
+                    <li class="menu">
+                        <a class="active js-topMenuLink" href="/about">
+                            <span class="itemName">
+                                关于
+                                
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="phoneMenuPanel">
+        
+        <div class="phoneMenuItem"><a href="/">博客</a></div>
+        
+        
+        <div class="phoneMenuItem"><a href="/friends">朋友</a></div>
+        
+        
+        <div class="phoneMenuItem"><a href="/about">关于</a></div>
+        
+    </div>
+</header>
+<script src="/js/header.js"></script>
+    <div class="container">
+    <div id="countryRedirectMessage" style="display: block;">
+        当前您正在用中文（简体）浏览Mythicu。
+        <a class="orangeLink" id="switchEnglish">
+            Switch to English            
+        </a>
+        <i id="closeSwitchEnglish" aria-hidden="true">×</i>
+    </div>
+    <div class="frontListingWrapper">
+        <div class="sectionWrapper">
+            <div class="sectionTitle">
+                <h1>
+                    <a>
+                        全球热门博客
+                        <i class="fa fa-flag" aria-hidden="true"></i>
+                    </a>
+                </h1>
+            </div>
+            <ul id="hotVideosSection" class="full-row-thumbs videos">
+                
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2024/01/03/2023-nian-du-zong-jie/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2024/01/03/2023-nian-du-zong-jie/" class="leancloud_visitors">
+                                    2023年度总结
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2024-01-03
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2023/04/12/mysql-bi-jiao-liang-ge-ke-neng-wei-null-de-zhi/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2023/04/12/mysql-bi-jiao-liang-ge-ke-neng-wei-null-de-zhi/" class="leancloud_visitors">
+                                    mysql比较两个可能为null的值
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2023-04-12
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2023/02/10/ji-yi-jian-gao-zhong-qu-shi/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2023/02/10/ji-yi-jian-gao-zhong-qu-shi/" class="leancloud_visitors">
+                                    记一件高中趣事
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2023-02-10
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2022/10/27/cai-yuan/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2022/10/27/cai-yuan/" class="leancloud_visitors">
+                                    裁员
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2022-10-27
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2022/10/21/ji-lu-ji-ge-jie-ma-ping-tai/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2022/10/21/ji-lu-ji-ge-jie-ma-ping-tai/" class="leancloud_visitors">
+                                    记录几个接码平台
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2022-10-21
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2022/05/26/mybatis-zhong-zheng-shu-0-yu-kong-zi-fu-chuan-bi-jiao/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2022/05/26/mybatis-zhong-zheng-shu-0-yu-kong-zi-fu-chuan-bi-jiao/" class="leancloud_visitors">
+                                    MyBatis中整数0与空字符串比较
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2022-05-26
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2022/01/26/mybatis-mapper-duo-ci-qing-qiu-fan-hui-zhi-wei-tong-yi-yin-yong/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2022/01/26/mybatis-mapper-duo-ci-qing-qiu-fan-hui-zhi-wei-tong-yi-yin-yong/" class="leancloud_visitors">
+                                    MyBatis Mapper多次请求返回值为同一引用
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2022-01-26
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2022/01/12/jin-ri-si-kao-happy-wife-happy-life/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2022/01/12/jin-ri-si-kao-happy-wife-happy-life/" class="leancloud_visitors">
+                                    今日思考:Happy wife, happy life.
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2022-01-12
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2021/12/21/jin-ri-jing-ju-yan-xia-de-ji-shi-zui-hao-de/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2021/12/21/jin-ri-jing-ju-yan-xia-de-ji-shi-zui-hao-de/" class="leancloud_visitors">
+                                    今日警句:眼下的即是最好的
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2021-12-21
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2021/11/02/ji-yi-ci-bu-yu-kuai-de-gou-wu-ti-yan/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2021/11/02/ji-yi-ci-bu-yu-kuai-de-gou-wu-ti-yan/" class="leancloud_visitors">
+                                    记一次不愉快的购物体验
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2021-11-02
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2021/08/02/mysql-data-free-yu-optimize/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2021/08/02/mysql-data-free-yu-optimize/" class="leancloud_visitors">
+                                    MySQL data free与optimize
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2021-08-02
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2021/07/02/mysql-cuo-xing-shu-ju-chu-li/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2021/07/02/mysql-cuo-xing-shu-ju-chu-li/" class="leancloud_visitors">
+                                    MySQL错行数据处理
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2021-07-02
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2020/12/05/vue-chu-ji-shi-yong-shuo-ming/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2020/12/05/vue-chu-ji-shi-yong-shuo-ming/" class="leancloud_visitors">
+                                    vue初级使用说明
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2020-12-05
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2020/11/07/java-zhong-websocket-yu-callable-de-shi-ji-yun-yong/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2020/11/07/java-zhong-websocket-yu-callable-de-shi-ji-yun-yong/" class="leancloud_visitors">
+                                    Java中WebSocket与callable的实际运用
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2020-11-07
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2020/09/19/myth-icu-qi-dong/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2020/09/19/myth-icu-qi-dong/" class="leancloud_visitors">
+                                    myth.icu启动
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2020-09-19
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2019/12/25/xin-nian-kuai-le/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2019/12/25/xin-nian-kuai-le/" class="leancloud_visitors">
+                                    新年快乐
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2019-12-25
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2019/12/08/shu-mei-pai-mei-tian-xia-ban-hui-jia-bo-fang-hui-jia-yin-le/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2019/12/08/shu-mei-pai-mei-tian-xia-ban-hui-jia-bo-fang-hui-jia-yin-le/" class="leancloud_visitors">
+                                    树莓派 每天下班回家 播放《回家》音乐
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2019-12-08
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2019/11/30/an-yi-xia-niu-fang-yi-ju-pi-shu-mei-pai-yin-xiang-an-niu-teng-xun-yun-tts-yi-yan/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2019/11/30/an-yi-xia-niu-fang-yi-ju-pi-shu-mei-pai-yin-xiang-an-niu-teng-xun-yun-tts-yi-yan/" class="leancloud_visitors">
+                                    按一下钮放一句屁：树莓派+音响+按钮+腾讯云TTS+一言
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2019-11-30
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2019/11/17/shu-mei-pai-ssd1306-oled-xian-shi-shu-mei-pai-wen-du-ji-tian-qi/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2019/11/17/shu-mei-pai-ssd1306-oled-xian-shi-shu-mei-pai-wen-du-ji-tian-qi/" class="leancloud_visitors">
+                                    树莓派 SSD1306 OLED 显示树莓派温度及天气
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2019-11-17
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2019/11/09/shu-mei-pai-an-zhuang-netdata-zhong-wen-xi-tong-jian-kong-web-ping-tai/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2019/11/09/shu-mei-pai-an-zhuang-netdata-zhong-wen-xi-tong-jian-kong-web-ping-tai/" class="leancloud_visitors">
+                                    树莓派安装netdata中文系统监控web平台
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2019-11-09
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2019/10/26/shu-mei-pai-lamp-da-jian-ke-dao-yun-deng-yi-xie-lie-pei-zhi/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2019/10/26/shu-mei-pai-lamp-da-jian-ke-dao-yun-deng-yi-xie-lie-pei-zhi/" class="leancloud_visitors">
+                                    树莓派LAMP搭建可道云等一些列配置
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2019-10-26
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2019/10/15/zhen-dui-sha-bi-lao-shi-de-jie-jue-fang-an/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2019/10/15/zhen-dui-sha-bi-lao-shi-de-jie-jue-fang-an/" class="leancloud_visitors">
+                                    针对傻逼老师的解决方案
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2019-10-15
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2019/09/20/ji-yu-springboot-de-ji-zhang-xi-tong/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2019/09/20/ji-yu-springboot-de-ji-zhang-xi-tong/" class="leancloud_visitors">
+                                    基于springboot的记账系统
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2019-09-20
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2019/09/09/windows-wu-xian-kong-zhi-n-ge-an-zhuo-shou-ji/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2019/09/09/windows-wu-xian-kong-zhi-n-ge-an-zhuo-shou-ji/" class="leancloud_visitors">
+                                    windows无线控制n个安卓手机
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2019-09-09
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2019/08/27/guan-yu-ba-yue/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2019/08/27/guan-yu-ba-yue/" class="leancloud_visitors">
+                                    关于八月
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2019-08-27
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2019/08/05/ji-shang-ban-di-yi-ci-chi-dao/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2019/08/05/ji-shang-ban-di-yi-ci-chi-dao/" class="leancloud_visitors">
+                                    记上班第一次迟到
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2019-08-05
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2019/07/24/ji-xiu-fu-di-yi-ge-bug/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2019/07/24/ji-xiu-fu-di-yi-ge-bug/" class="leancloud_visitors">
+                                    记修复第一个Bug
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2019-07-24
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2019/07/17/shi-xi-ai-man-shu-ju/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2019/07/17/shi-xi-ai-man-shu-ju/" class="leancloud_visitors">
+                                    实习——艾漫数据
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2019-07-17
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2019/07/04/zai-xue-xiao-de-zui-hou-ji-tian/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2019/07/04/zai-xue-xiao-de-zui-hou-ji-tian/" class="leancloud_visitors">
+                                    在学校的最后几天
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2019-07-04
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2019/06/24/ji-yu-springboot-de-shuang-pin-zai-xian-lian-xi/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2019/06/24/ji-yu-springboot-de-shuang-pin-zai-xian-lian-xi/" class="leancloud_visitors">
+                                    基于springboot的双拼在线练习
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2019-06-24
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2019/06/15/myth-zuo-pin-zhan-lan-ting-zhan-shi-guan-li-ceng-jing-de-xiang-mu/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2019/06/15/myth-zuo-pin-zhan-lan-ting-zhan-shi-guan-li-ceng-jing-de-xiang-mu/" class="leancloud_visitors">
+                                    《Myth作品展览厅》——展示管理曾经的项目
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2019-06-15
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2019/06/10/xin-jian-pan-plum-niz-atom66/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2019/06/10/xin-jian-pan-plum-niz-atom66/" class="leancloud_visitors">
+                                    新键盘plum niz atom66
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2019-06-10
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2019/05/29/tu-jie-she-ji-mo-shi-zong-jie/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2019/05/29/tu-jie-she-ji-mo-shi-zong-jie/" class="leancloud_visitors">
+                                    《图解设计模式》总结
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2019-05-29
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2019/05/21/lan-ren-xiang-mu-tang-zai-chuang-shang-kong-zhi-yin-le-bo-fang/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2019/05/21/lan-ren-xiang-mu-tang-zai-chuang-shang-kong-zhi-yin-le-bo-fang/" class="leancloud_visitors">
+                                    懒人项目——躺在床上控制音乐播放
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2019-05-21
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2019/05/20/tui-jian-yi-ge-xue-xi-bian-cheng-zhi-shi-wang-zhan-niu-ke-wang/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2019/05/20/tui-jian-yi-ge-xue-xi-bian-cheng-zhi-shi-wang-zhan-niu-ke-wang/" class="leancloud_visitors">
+                                    推荐一个学习编程知识网站——牛客网
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2019-05-20
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2019/05/16/shou-ci-shi-xian-suan-fa-zi-dong-xun-lu-suan-fa-he-sao-di-ji-qi-ren-suan-fa/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2019/05/16/shou-ci-shi-xian-suan-fa-zi-dong-xun-lu-suan-fa-he-sao-di-ji-qi-ren-suan-fa/" class="leancloud_visitors">
+                                    首次实现算法——自动寻路算法和扫地机器人算法
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2019-05-16
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2019/05/12/an-li-yi-ben-xue-xi-she-ji-mo-shi-de-shu-tu-jie-she-ji-mo-shi/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2019/05/12/an-li-yi-ben-xue-xi-she-ji-mo-shi-de-shu-tu-jie-she-ji-mo-shi/" class="leancloud_visitors">
+                                    安利一本学习设计模式的书《图解设计模式》
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2019-05-12
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2019/05/01/jie-jue-linux-yun-xing-springboot-wen-jian-yi-hui-jiu-jie-shu/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2019/05/01/jie-jue-linux-yun-xing-springboot-wen-jian-yi-hui-jiu-jie-shu/" class="leancloud_visitors">
+                                    解决linux运行springboot文件一会就结束
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2019-05-01
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="pcVideoListItem videoblock videoBox">
+                        <div class="wrap">
+                            <div class="phimage">
+                                <div class="preloadLine" style="opacity: 0; width: 0px;"></div>
+                                <a class="fade videoPreviewBg linkVideoThumb img fadeUp leancloud_visitors" href="/2019/05/01/myth-blog-qi-dong/">
+                                    <img src="" class="thumb offsetLoad blogImage" width="150">
+                                </a>
+                            </div>
+                            <div class="thumbnail-info-wrapper clearfix">
+                                <span class="title">
+                                <a href="/2019/05/01/myth-blog-qi-dong/" class="leancloud_visitors">
+                                    Myth Blog启动！
+                                </a>
+                            </span>
+                                <div class="videoDetailsBlock">
+                                    <span class="js-viewCount">100次观看</span>
+                                    <div>
+                                        <i class="fa fa-thumbs-o-up"></i>
+                                        <span class="js-likeCount">81%</span>
+                                    </div>
+                                    <div>
+                                        2019-05-01
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="/js/container.js"></script>
+        <footer>
+    <div class="footer-wrapper">
+        <div class="socialLink">
+            <a href="https://github.com/myth984/" target="_blank">
+                <i class="fa fa-github fa-2x" aria-hidden="true">
+                </i>
+            </a>
+        </div>
+        <div class="copyright">© Myth.icu, 2020</div>
+    </div>
+</footer>
+</body>
+</html>
