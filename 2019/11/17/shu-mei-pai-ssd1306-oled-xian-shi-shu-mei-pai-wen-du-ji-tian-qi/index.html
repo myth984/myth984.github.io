@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="myth,blog,myth984">
+    <meta name="description" content="Myth的博客">
+    <meta name="author" content="myth">
+    
+    <title>
+        
+            树莓派 SSD1306 OLED 显示树莓派温度及天气 |
+        
+        myth.icu
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/asset/image/avatar.png">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"myth.icu","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"title":"myth.icu","author":"myth","avatar":"/asset/image/avatar.png","logo":"/asset/image/avatar.png","favicon":"/asset/image/avatar.png"},"menu":{"home":"/","archives":"/archives","友链":"/friends","about":"/about"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"announcement":null,"category":false,"tag":false,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"toc":{"enable":false,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 5.4.2"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/asset/image/avatar.png">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               myth.icu
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                首页
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                归档
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/friends">
+                                
+                                友链
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/about">
+                                
+                                关于
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            首页
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            归档
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/friends">
+                            
+                            友链
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/about">
+                            
+                            关于
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        树莓派 SSD1306 OLED 显示树莓派温度及天气
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/asset/image/avatar.png">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">myth</span>
+                                
+                                    <span class="author-badge">Lv4</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2019-11-17 23:20:30</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Mon Jun 23 2025 15:41:06 GMT+0800">2025-06-23 15:41:06</span>
+                </span>
+            
+        
+
+        
+
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h2 id="硬件准备"><a href="#硬件准备" class="headerlink" title="硬件准备"></a>硬件准备</h2><ol>
+<li><p>树莓派</p>
+</li>
+<li><p>SSD1306驱动OLED屏幕</p>
+</li>
+<li><p>母对母杜邦线</p>
+</li>
+<li><p>面包板、公对公（可选）</p>
+</li>
+</ol>
+<h2 id="开始操作"><a href="#开始操作" class="headerlink" title="开始操作"></a>开始操作</h2><p><a target="_blank" rel="noopener" href="http://shumeipai.nxez.com/wp-content/uploads/2015/03/rpi-pins-40-0.png"><img src="http://shumeipai.nxez.com/wp-content/uploads/2015/03/rpi-pins-40-0.png"></a></p>
+<p>把 oled屏幕引脚 通过 杜邦线 插到 树莓派 对应的引脚，VCC引脚插入3.3v引脚，GND代表接地，SDA要插入SDA.1，SCL插入SCL.1</p>
+<h4 id="未试验可否热插拔"><a href="#未试验可否热插拔" class="headerlink" title="未试验可否热插拔"></a>未试验可否热插拔</h4><p>ssh连接树莓派（或其他方式）</p>
+<h3 id="打开相应接口："><a href="#打开相应接口：" class="headerlink" title="打开相应接口："></a>打开相应接口：</h3><p><code>sudo raspi-config</code></p>
+<p>Interfacing Options &gt; I2C    打开I2C</p>
+<p>Interfacing Options &gt; SPI    打开SPI</p>
+<h3 id="安装相关驱动"><a href="#安装相关驱动" class="headerlink" title="安装相关驱动"></a>安装相关驱动</h3><p><code>sudo apt-get update</code></p>
+<p><code>sudo apt-get install build-essential python-dev python-pip</code></p>
+<p><code>sudo pip3 install RPi.GPIO</code></p>
+<p><code>sudo apt-get install python-imaging python-smbus</code></p>
+<p><code>sudo pip3 install demjson</code></p>
+<h3 id="从Github上拷贝Adafruit-Python-SSD1306"><a href="#从Github上拷贝Adafruit-Python-SSD1306" class="headerlink" title="从Github上拷贝Adafruit_Python_SSD1306"></a>从Github上拷贝Adafruit_Python_SSD1306</h3><p><code>sudo apt-get install git</code></p>
+<p><code>git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git</code> 也可以下载其他语言</p>
+<p><code>cd Adafruit_Python_SSD1306</code></p>
+<p><code>sudo python3 setup.py install</code></p>
+<h3 id="编写程序"><a href="#编写程序" class="headerlink" title="编写程序"></a>编写程序</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> time
+<span class="token keyword">import</span> Adafruit_GPIO<span class="token punctuation">.</span>SPI <span class="token keyword">as</span> SPI
+<span class="token keyword">import</span> Adafruit_SSD1306
+<span class="token keyword">import</span> requests
+<span class="token keyword">import</span> demjson
+<span class="token keyword">from</span> PIL <span class="token keyword">import</span> Image
+<span class="token keyword">from</span> PIL <span class="token keyword">import</span> ImageDraw
+<span class="token keyword">from</span> PIL <span class="token keyword">import</span> ImageFont
+<span class="token keyword">import</span> threading
+<span class="token keyword">import</span> subprocess
+RST <span class="token operator">=</span> None
+DC <span class="token operator">=</span> <span class="token number">23</span>
+SPI_PORT <span class="token operator">=</span> <span class="token number">0</span>
+SPI_DEVICE <span class="token operator">=</span> <span class="token number">0</span>
+disp <span class="token operator">=</span> Adafruit_SSD1306<span class="token punctuation">.</span>SSD1306_128_32<span class="token punctuation">(</span>rst<span class="token operator">=</span>RST<span class="token punctuation">)</span>
+disp<span class="token punctuation">.</span>begin<span class="token punctuation">(</span><span class="token punctuation">)</span>
+disp<span class="token punctuation">.</span>clear<span class="token punctuation">(</span><span class="token punctuation">)</span>
+disp<span class="token punctuation">.</span>display<span class="token punctuation">(</span><span class="token punctuation">)</span>
+width <span class="token operator">=</span> disp<span class="token punctuation">.</span>width
+height <span class="token operator">=</span> disp<span class="token punctuation">.</span>height
+image <span class="token operator">=</span> Image<span class="token punctuation">.</span>new<span class="token punctuation">(</span><span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>width<span class="token punctuation">,</span> height<span class="token punctuation">)</span><span class="token punctuation">)</span>
+draw <span class="token operator">=</span> ImageDraw<span class="token punctuation">.</span>Draw<span class="token punctuation">(</span>image<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>str<span class="token punctuation">(</span>width<span class="token punctuation">)</span> <span class="token operator">+</span><span class="token string">","</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>height<span class="token punctuation">)</span><span class="token punctuation">)</span>
+draw<span class="token punctuation">.</span>rectangle<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>width<span class="token punctuation">,</span>height<span class="token punctuation">)</span><span class="token punctuation">,</span> outline<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> fill<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+padding <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">3</span>
+top <span class="token operator">=</span> padding
+bottom <span class="token operator">=</span> height<span class="token operator">-</span>padding
+x <span class="token operator">=</span> <span class="token number">0</span>
+font <span class="token operator">=</span> ImageFont<span class="token punctuation">.</span>truetype<span class="token punctuation">(</span><span class="token string">'/home/pi/font/微软vista雅黑.ttf'</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#fontTemp = ImageFont.truetype('/home/pi/font/kraash.woff.ttf', 8)</span>
+
+<span class="token keyword">def</span> <span class="token function">getWeather</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        req <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"http://wthrcdn.etouch.cn/weather_mini?city=%E5%8C%97%E4%BA%AC"</span><span class="token punctuation">)</span>
+        weatherJson <span class="token operator">=</span> demjson<span class="token punctuation">.</span>decode<span class="token punctuation">(</span>req<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+        weather <span class="token operator">=</span> weatherJson<span class="token punctuation">[</span><span class="token string">'data'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'forecast'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        <span class="token keyword">global</span> high
+        high <span class="token operator">=</span> weather<span class="token punctuation">[</span><span class="token string">'high'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'高温'</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">global</span> low
+        low <span class="token operator">=</span> weather<span class="token punctuation">[</span><span class="token string">'low'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'低温'</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">global</span> type_
+        type_ <span class="token operator">=</span> weather<span class="token punctuation">[</span><span class="token string">'type'</span><span class="token punctuation">]</span>
+        <span class="token keyword">global</span> fengli
+        fengli <span class="token operator">=</span> weather<span class="token punctuation">[</span><span class="token string">'fengli'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'&lt;![CDATA['</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">']'</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'>'</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">60</span><span class="token operator">*</span><span class="token number">60</span><span class="token punctuation">)</span>
+thead <span class="token operator">=</span> threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target <span class="token operator">=</span> getWeather<span class="token punctuation">)</span>
+thead<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    draw<span class="token punctuation">.</span>rectangle<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>width<span class="token punctuation">,</span>height<span class="token punctuation">)</span><span class="token punctuation">,</span> outline<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> fill<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token keyword">with</span> open <span class="token punctuation">(</span>"<span class="token operator">/</span>sys<span class="token operator">/</span><span class="token keyword">class</span><span class="token operator">/</span>thermal<span class="token operator">/</span>thermal_zone0<span class="token operator">/</span>temp
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2019/11/30/an-yi-xia-niu-fang-yi-ju-pi-shu-mei-pai-yin-xiang-an-niu-teng-xun-yun-tts-yi-yan/"
+                                   title="按一下钮放一句屁：树莓派+音响+按钮+腾讯云TTS+一言"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">按一下钮放一句屁：树莓派+音响+按钮+腾讯云TTS+一言</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2019/11/09/shu-mei-pai-an-zhuang-netdata-zhong-wen-xi-tong-jian-kong-web-ping-tai/"
+                                   title="树莓派安装netdata中文系统监控web平台"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">树莓派安装netdata中文系统监控web平台</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2025
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">myth</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>
